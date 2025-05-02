@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TopHealth
-build_property.ProjectDir = C:\Users\davia\OneDrive\Documentos\GitHub\TopHealth\TopHealth\TopHealth\
+build_property.ProjectDir = C:\Users\samug\OneDrive\Documentos\Scripts\ScriptsCs\TopHealth\TopHealth\TopHealth\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/davia/OneDrive/Documentos/GitHub/TopHealth/TopHealth/TopHealth/App.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth/TopHealth/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/davia/OneDrive/Documentos/GitHub/TopHealth/TopHealth/TopHealth/MainWindow.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth/TopHealth/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
