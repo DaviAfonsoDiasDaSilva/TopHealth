@@ -70,6 +70,17 @@
                     HorizontalAlignment="Center"
                     Content="Entrar"
                 />
+                 <Button Grid.Row="2" Grid.Column="1"
+                    Background="RoyalBlue"
+                    Foreground="White"
+                    FontSize="18"
+                    Padding="30"
+                    BorderThickness="2"
+                    BorderBrush="White"
+                    CornerRadius="20"
+                    HorizontalAlignment="Center"
+                    Content="Criar Conta"
+                />
             </Grid>
         </Grid>
     
