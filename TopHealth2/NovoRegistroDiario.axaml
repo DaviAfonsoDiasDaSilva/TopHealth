@@ -81,6 +81,10 @@
                 <ComboBoxItem Content="Ruim" />
                 <ComboBoxItem Content="Muito Ruim" />
                 </ComboBox>
+                <TextBox 
+                        x:Name="HabitAlime"
+                        Watermark="Descreva seus habitos alimentares"
+                />
             </Grid>
         </Grid>
 </Window>

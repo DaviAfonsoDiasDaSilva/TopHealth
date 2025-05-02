@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TopHealth2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6e3c8974fc6e1ff22177a74fb553a81574f0fb2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da3f8e6afe54b647f454e15254469f3bda396a7d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TopHealth2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TopHealth2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
