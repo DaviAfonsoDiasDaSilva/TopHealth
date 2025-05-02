@@ -11,12 +11,21 @@ public partial class NovoRegistroDiario : Window
         InitializeComponent();
     }
     private void HumorSelected(object sender, SelectionChangedEventArgs e)
-{
-	var comboBox = sender as ComboBox;
-	if (comboBox.SelectedItem is ComboBoxItem item)
-	{
-    	Console.WriteLine($"Cidade selecionada: {item.Content}");
-	}
-}
+    {
+        var comboBox = sender as ComboBox;
+        if (comboBox.SelectedItem is ComboBoxItem item)
+        {
+            
+        }
+    }
+
+    private void SonoQuaSelec(object sender, SelectionChangedEventArgs e)
+    {   
+        var comboBox = sender as ComboBox;
+        if (comboBox.SelectedItem is ComboBoxItem item)
+        {
+            
+        }
+    }
 
 }
