@@ -19,5 +19,6 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <AvaloniaResource Include="Assets\**"/>
+    <AvaloniaResource Include="Assets/Fontes/Italianno-Regular.ttf"/>
   </ItemGroup>
 </Project>
