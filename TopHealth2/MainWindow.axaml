@@ -4,13 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TopHealth2.MainWindow"
-        Title="TopHealth2">
-     <StackPanel>
-        <Border Background="LightBlue" Width="200" Height="100" Margin="20">
-            <TextBlock 
-                Text="Top Health!"
-                FontSize="20"
-                HorizontalAlignment="Center" VerticalAlignment="Center"
+        Title="TopHealth2" Width="500" Height="300">
+    <StackPanel>
+        <Border Background="Blue" Width="200" Height="100" Margin="20">
+            <Image Source="../Assets/Imagens/Logo.png"
             />
         </Border>
     </StackPanel>
