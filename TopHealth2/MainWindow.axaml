@@ -62,24 +62,24 @@
                 <Button Grid.Row="2" Grid.Column="0"
                     Background="RoyalBlue"
                     Foreground="White"
-                    FontSize="18"
+                    FontSize="13"
                     Padding="30"
                     BorderThickness="2"
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    Content="Entrar"
+                    Content="Historico existente"
                 />
                  <Button Grid.Row="2" Grid.Column="1"
                     Background="RoyalBlue"
                     Foreground="White"
-                    FontSize="18"
+                    FontSize="13"
                     Padding="30"
                     BorderThickness="2"
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    Content="Criar Conta"
+                    Content="Novo Registro"
                 />
             </Grid>
         </Grid>
