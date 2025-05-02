@@ -4,11 +4,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TopHealth2.MainWindow"
-        Title="TopHealth2" Width="500" Height="300">
-    <StackPanel>
-        <Border Background="Blue" Width="200" Height="100" Margin="20">
-            <Image Source="../Assets/Imagens/Logo.png"
-            />
-        </Border>
-    </StackPanel>
+        Title="TopHealth2" Width="1000" Height="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions> 
+          
+        <Image Grid.Row="0" Grid.Column="0"
+            Source="../Assets/Imagens/TopHealthBackground.png"
+            Stretch="UniformToFill"
+        />
+        <Image Grid.Row="0" Grid.Column="0"
+            Source="../Assets/Imagens/TopHealthText.png"
+            Stretch="Uniform"
+        />
+        
+         
+    </Grid>
+    <!--<Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"
+           Content="Criar Conta"
+        />
+        </Grid> -->
+    
+    
 </Window>
