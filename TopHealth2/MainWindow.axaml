@@ -5,43 +5,43 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TopHealth2.MainWindow"
         Title="TopHealth2" Width="1000" Height="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            
-        </Grid.RowDefinitions>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            
-        </Grid.ColumnDefinitions> 
-          
-        <Image Grid.Row="0" Grid.Column="0"
-            Source="../Assets/Imagens/TopHealthBackground.png"
-            Stretch="UniformToFill"
-        />
-        <Image Grid.Row="0" Grid.Column="0"
-            Source="../Assets/Imagens/TopHealthText.png"
-            Stretch="Uniform"
-        />
-        
-         
-    </Grid>
-    <!--<Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions> 
+                
+                <Image Grid.Row="0" Grid.Column="0"
+                    Source="../Assets/Imagens/TopHealthBackground.png"
+                    Stretch="UniformToFill"
+                />
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="0"
+                    Source="../Assets/Imagens/TopHealthText.png"
+                    Stretch="Uniform"
+                />
+                
+            </Grid>
 
-        <Button Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"
-           Content="Criar Conta"
-        />
-        </Grid> -->
-    
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="5*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions> 
+                <Button Grid.Row="1" Grid.Column="2"
+                HorizontalAlignment="Center"
+                Content="Entrar"
+                />
+            </Grid>
+        </Grid>
     
 </Window>
