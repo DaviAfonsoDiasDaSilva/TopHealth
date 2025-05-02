@@ -68,6 +68,7 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
+                    
                     Content="Historico existente"
                 />
                  <Button Grid.Row="2" Grid.Column="1"
@@ -79,6 +80,7 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
+                    Click="NovoRegi"
                     Content="Novo Registro"
                 />
             </Grid>
