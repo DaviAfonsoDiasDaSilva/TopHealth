@@ -1,0 +1,89 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TopHealth2.MainWindow"
+        Title="TopHealth2" Width="1000" Height="800">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions> 
+                
+                <Image Grid.Row="0" Grid.Column="0"
+                    Source="../Assets/Imagens/TopHealthBackground.png"
+                    Stretch="UniformToFill"
+                />
+
+                <Image Grid.Row="0" Grid.Column="0"
+                    Source="../Assets/Imagens/TopHealthText.png"
+                    Stretch="Uniform"
+                />
+                
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="30*" />
+                    <RowDefinition Height="50*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions> 
+                <!-- Teste do grid
+                <Border Grid.Row="0" Grid.Column="0" Background="LightGray">
+                    <TextBlock Text="Row 0, Col 0" Margin="5"/>
+                </Border>
+
+                <Border Grid.Row="0" Grid.Column="1" Background="Blue">
+                    <TextBlock Text="Row 0, Col 1" Margin="5"/>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="0" Background="Gray">
+                    <TextBlock Text="Row 1, Col 0" Margin="5"/>
+                </Border>
+
+                <Border Grid.Row="1" Grid.Column="1" Background="LightBlue">
+                    <TextBlock Text="Row 1, Col 1" Margin="5"/>
+                </Border>
+
+                <Border Grid.Row="2" Grid.Column="1" Background="LightGreen">
+                    <TextBlock Text="Row 2, Col 1" Margin="5"/>
+                </Border>
+                -->
+                <Button Grid.Row="2" Grid.Column="0"
+                    Background="RoyalBlue"
+                    Foreground="White"
+                    FontSize="13"
+                    Padding="30"
+                    BorderThickness="2"
+                    BorderBrush="White"
+                    CornerRadius="20"
+                    HorizontalAlignment="Center"
+                    
+                    Content="Historico existente"
+                />
+                 <Button Grid.Row="2" Grid.Column="1"
+                    Background="RoyalBlue"
+                    Foreground="White"
+                    FontSize="13"
+                    Padding="30"
+                    BorderThickness="2"
+                    BorderBrush="White"
+                    CornerRadius="20"
+                    HorizontalAlignment="Center"
+                    Click="NovoRegi"
+                    Content="Novo Registro"
+                />
+            </Grid>
+        </Grid>
+    
+</Window>
