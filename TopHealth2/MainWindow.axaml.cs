@@ -14,5 +14,6 @@ public partial class MainWindow : Window
         //this.Close(true);
         var NovoRegiWin = new NovoRegistroDiario();
         NovoRegiWin.Show();
+        this.Close();
     }
 }
