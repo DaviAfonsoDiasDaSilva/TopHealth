@@ -97,6 +97,14 @@
                 />
                 <!--<Button Content="Salvar" Click="BotSalv" Margin="0,20,0,0"/>-->
                 <Button Grid.Row="2" Grid.Column="3"
+                Background="RoyalBlue"
+                Foreground="White"
+                FontSize="13"
+                Padding="30"
+                BorderThickness="2"
+                BorderBrush="White"
+                CornerRadius="20"
+                HorizontalAlignment="Center"
                 Content="Retornar" Click="BotRet" Margin="0,20,0,0"/>
             </Grid>
         </Grid>
