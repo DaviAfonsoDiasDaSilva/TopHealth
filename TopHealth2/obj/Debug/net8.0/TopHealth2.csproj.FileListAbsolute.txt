@@ -66,3 +66,6 @@ D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\refint\Avalon
 D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\TopHealth2.csproj.Up2Date
 D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\TopHealth2.genruntimeconfig.cache
 D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\ref\TopHealth2.dll
+D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\TopHealth2.dll
+D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\refint\TopHealth2.dll
+D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\obj\Debug\net8.0\TopHealth2.pdb
