@@ -31,6 +31,13 @@ public partial class NovoRegistroDiario : Window
         }
     }
 
+    private void BotRet(object? sender, RoutedEventArgs e)
+    {
+        var TelaIni = new MainWindow();
+        TelaIni.Show();
+        this.Close();
+    }
+
     /* private void BotSalv(object? sender, RoutedEventArgs e)
     {
         //double valor = QuantAtvFisc.Value ?? 0;

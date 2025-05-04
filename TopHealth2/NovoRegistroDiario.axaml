@@ -96,6 +96,8 @@
                     Value="10" 
                 />
                 <!--<Button Content="Salvar" Click="BotSalv" Margin="0,20,0,0"/>-->
+                <Button Grid.Row="2" Grid.Column="3"
+                Content="Retornar" Click="BotRet" Margin="0,20,0,0"/>
             </Grid>
         </Grid>
 </Window>
