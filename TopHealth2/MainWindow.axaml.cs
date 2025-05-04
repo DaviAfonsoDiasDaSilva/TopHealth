@@ -8,6 +8,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+         DataContext = new NovoRegistroDiario();
     }
     private void NovoRegi(object? sender, RoutedEventArgs e)
     {

@@ -19,26 +19,25 @@
                     Source="../Assets/Imagens/TopHealthBackground.png"
                     Stretch="UniformToFill"
                 />
+                    <TextBlock
+                    Text="Selecione a qualidade do seu sono e humor"
+                    FontSize="40"
+                    FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    TextAlignment="Center"
+                    />
 
-                <TextBlock
-                   Text="Selecione a qualidade do seu sono e humor"
-                   FontSize="40"
-                   FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
-                   Foreground="White"
-                   FontWeight="Bold"
-                   TextAlignment="Center"
-                />
+                    <TextBlock
+                    Text="&#x0a;alem de descrever a sua alimentação e dizer o quanto&#x0a;
+                    você faz de atividade fisica" 
+                    FontSize="40"
+                    FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    TextAlignment="Center"
+                    />
 
-                <TextBlock
-                   Text="&#x0a;alem de descrever a sua alimentação e dizer o quanto&#x0a;
-                   você faz de atividade fisica" 
-                   FontSize="40"
-                   FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
-                   Foreground="White"
-                   FontWeight="Bold"
-                   TextAlignment="Center"
-                />
-                
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -75,6 +74,7 @@
                         SelectionChanged="SonoQuaSelec"
                         SelectedIndex="-1"
                         PlaceholderText="Qualidade do sono"
+
                         >
                 <ComboBoxItem Content="Muito boa" />
                 <ComboBoxItem Content="Boa" />
@@ -85,7 +85,17 @@
                 <TextBox Grid.Row="1" Grid.Column="2"
                         x:Name="HabitAlime"
                         Watermark="Descreva seus habitos alimentares"
+
                 />
+
+                <NumericUpDown Grid.Row="1" Grid.Column="3"
+                    Name="QuantAtvFisc"
+                    Minimum="0"
+                    Maximum="100"
+                    Increment="1"
+                    Value="10" 
+                />
+                <!--<Button Content="Salvar" Click="BotSalv" Margin="0,20,0,0"/>-->
             </Grid>
         </Grid>
 </Window>

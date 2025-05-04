@@ -1,6 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia;
+
+
 
 namespace TopHealth2;
 
@@ -28,4 +31,9 @@ public partial class NovoRegistroDiario : Window
         }
     }
 
+    /* private void BotSalv(object? sender, RoutedEventArgs e)
+    {
+        //double valor = QuantAtvFisc.Value ?? 0;
+        //MessageBox.Show(this, $"Valor atual: {valor}", "Info");
+    }*/
 }

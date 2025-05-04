@@ -23,7 +23,7 @@ class Program
 
 public static class Database
 {
-   public static string _caminho = @"Data Source=D:\Desktop\bancoTAPOO.db";
+   public static string _caminho = @"Data Source=../bancoTAPOO.db";
 
     public static void TestarConexao()
     {
@@ -64,7 +64,7 @@ public static class Database
     }
 }
 
-public class RegistroDiário
+public class RegistroDiario
 {
     private int _id;
     private int _userId;
@@ -116,7 +116,7 @@ public class RegistroDiário
         set { _atividadeFisicaId = value; } 
     }
 
-    public RegistroDiário(int id, int userId, string data, int humorId, int sonoId, int alimentacaoId, int atividadeFisicaId)
+    public RegistroDiario(int id, int userId, string data, int humorId, int sonoId, int alimentacaoId, int atividadeFisicaId)
     {
         _id = id;
         _userId = userId;

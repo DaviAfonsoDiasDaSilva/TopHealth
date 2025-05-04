@@ -67,7 +67,7 @@ public static class Database
     }
 }
 
-public class RegistroDiário
+public class RegistroDiario
 {
     private int _id;
     private int _userId;

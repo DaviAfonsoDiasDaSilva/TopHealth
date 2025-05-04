@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Threading.Tasks;
 
-namespace TopHealth
+namespace TopHealth2
 {
     public static class DatabaseMethods
     {
@@ -16,7 +16,8 @@ namespace TopHealth
         }
 
         
-        public static async Task<int> AdicionarRegistroDiarioAsync(RegistroDiário registro)
+
+        public static async Task<int> AdicionarRegistroDiarioAsync(RegistroDiario registro)
         {
             int id = -1;
             await Task.Run(() =>
@@ -47,9 +48,9 @@ namespace TopHealth
             return id;
         }
 
-        public static async Task<RegistroDiário> ObterRegistroDiarioAsync(int id)
+        public static async Task<RegistroDiario> ObterRegistroDiarioAsync(int id)
         {
-            RegistroDiário registro = null;
+            RegistroDiario registro = null;
             await Task.Run(() =>
             {
                 try
@@ -62,7 +63,7 @@ namespace TopHealth
                         {
                             if (leitor.Read())
                             {
-                                registro = new RegistroDiário(
+                                registro = new RegistroDiario(
                                     Convert.ToInt32(leitor["id"]),
                                     Convert.ToInt32(leitor["UserId"]),
                                     leitor["Data"].ToString(),
@@ -83,9 +84,9 @@ namespace TopHealth
             return registro;
         }
 
-        public static async Task<List<RegistroDiário>> ObterTodosRegistrosDiariosAsync(int userId, string dataInicio = null, string dataFim = null)
+        public static async Task<List<RegistroDiario>> ObterTodosRegistrosDiariosAsync(int userId, string dataInicio = null, string dataFim = null)
         {
-            List<RegistroDiário> registros = new List<RegistroDiário>();
+            List<RegistroDiario> registros = new List<RegistroDiario>();
             await Task.Run(() =>
             {
                 try
@@ -111,7 +112,7 @@ namespace TopHealth
                         {
                             while (leitor.Read())
                             {
-                                registros.Add(new RegistroDiário(
+                                registros.Add(new RegistroDiario(
                                     Convert.ToInt32(leitor["id"]),
                                     Convert.ToInt32(leitor["UserId"]),
                                     leitor["Data"].ToString(),
@@ -132,7 +133,7 @@ namespace TopHealth
             return registros;
         }
 
-        public static async Task<bool> AtualizarRegistroDiarioAsync(RegistroDiário registro)
+        public static async Task<bool> AtualizarRegistroDiarioAsync(RegistroDiario registro)
         {
             bool sucesso = false;
             await Task.Run(() =>
