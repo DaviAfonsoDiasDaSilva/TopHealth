@@ -38,9 +38,11 @@ public partial class NovoRegistroDiario : Window
         this.Close();
     }
 
-    /* private void BotSalv(object? sender, RoutedEventArgs e)
+     private void BotSalv(object? sender, RoutedEventArgs e)
     {
-        //double valor = QuantAtvFisc.Value ?? 0;
-        //MessageBox.Show(this, $"Valor atual: {valor}", "Info");
-    }*/
+        string texto = HabitAlime.Text;
+        Guid novoId = Guid.NewGuid();
+        Guid novoUseId = Guid.NewGuid();
+        RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,texto);
+    }
 }
