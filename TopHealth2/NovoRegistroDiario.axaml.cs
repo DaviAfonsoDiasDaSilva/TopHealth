@@ -3,8 +3,6 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia;
 
-
-
 namespace TopHealth2;
 
 public partial class NovoRegistroDiario : Window
@@ -38,11 +36,18 @@ public partial class NovoRegistroDiario : Window
         this.Close();
     }
 
-     private void BotSalv(object? sender, RoutedEventArgs e)
+    private async void BotSalv(object? sender, RoutedEventArgs e)
     {
-        string texto = HabitAlime.Text;
-        Guid novoId = Guid.NewGuid();
-        Guid novoUseId = Guid.NewGuid();
-        RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,texto);
+        int novoId = -1;
+        int novoUseId = -1;
+        string data = DateTime.Now.ToString("yyyy-MM-dd");
+        int HumorId = -1;
+        int SonoId = -1;
+        int AlimentacaoId = -1;
+        int AtividadeFisicaId = -1;
+        
+        RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
+
+        await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);
     }
 }

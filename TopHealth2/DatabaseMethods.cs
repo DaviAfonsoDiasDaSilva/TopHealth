@@ -48,9 +48,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<RegistroDiario> ObterRegistroDiarioAsync(int id)
+        public static async Task<RegistroDiario ?> ObterRegistroDiarioAsync(int id)
         {
-            RegistroDiario registro = null;
+            RegistroDiario ? registro = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -63,15 +63,16 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                registro = new RegistroDiario(
-                                    Convert.ToInt32(leitor["id"]),
-                                    Convert.ToInt32(leitor["UserId"]),
-                                    leitor["Data"].ToString(),
-                                    Convert.ToInt32(leitor["HumorId"]),
-                                    Convert.ToInt32(leitor["SonoId"]),
-                                    Convert.ToInt32(leitor["AlimentacaoId"]),
-                                    Convert.ToInt32(leitor["AtividadeFisicaId"])
-                                );
+
+                                int idRegistroDiario = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                int idUsuario = leitor["UserId"] != DBNull.Value ? Convert.ToInt32(leitor["UserId"]) : -1;
+                                string data = leitor["Data"] != DBNull.Value ? leitor["Data"].ToString()! : string.Empty;
+                                int idHumor = leitor["HumorId"] != DBNull.Value ? Convert.ToInt32(leitor["HumorId"]) : -1;
+                                int idSono = leitor["SonoId"] != DBNull.Value ? Convert.ToInt32(leitor["SonoId"]) : -1;
+                                int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
+                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
+                                
+                                registro = new RegistroDiario(idRegistroDiario, idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica);
                             }
                         }
                     }
@@ -84,7 +85,7 @@ namespace TopHealth2
             return registro;
         }
 
-        public static async Task<List<RegistroDiario>> ObterTodosRegistrosDiariosAsync(int userId, string dataInicio = null, string dataFim = null)
+        public static async Task<List<RegistroDiario>> ObterTodosRegistrosDiariosAsync(int userId, string ?dataInicio = null, string ?dataFim = null)
         {
             List<RegistroDiario> registros = new List<RegistroDiario>();
             await Task.Run(() =>
@@ -112,15 +113,16 @@ namespace TopHealth2
                         {
                             while (leitor.Read())
                             {
-                                registros.Add(new RegistroDiario(
-                                    Convert.ToInt32(leitor["id"]),
-                                    Convert.ToInt32(leitor["UserId"]),
-                                    leitor["Data"].ToString(),
-                                    Convert.ToInt32(leitor["HumorId"]),
-                                    Convert.ToInt32(leitor["SonoId"]),
-                                    Convert.ToInt32(leitor["AlimentacaoId"]),
-                                    Convert.ToInt32(leitor["AtividadeFisicaId"])
-                                ));
+
+                                int idRegistroDiario = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                int idUsuario = leitor["UserId"] != DBNull.Value ? Convert.ToInt32(leitor["UserId"]) : -1;
+                                string data = leitor["Data"] != DBNull.Value ? leitor["Data"].ToString()! : string.Empty;
+                                int idHumor = leitor["HumorId"] != DBNull.Value ? Convert.ToInt32(leitor["HumorId"]) : -1;
+                                int idSono = leitor["SonoId"] != DBNull.Value ? Convert.ToInt32(leitor["SonoId"]) : -1;
+                                int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
+                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
+
+                                registros.Add(new RegistroDiario(idRegistroDiario, idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica));
                             }
                         }
                     }
@@ -218,9 +220,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<Humor> ObterHumorAsync(int id)
+        public static async Task<Humor ?> ObterHumorAsync(int id)
         {
-            Humor humor = null;
+            Humor ? humor = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -233,10 +235,10 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                humor = new Humor(
-                                    Convert.ToInt32(leitor["id"]),
-                                    leitor["descricao"].ToString()
-                                );
+                                int idHumor = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                string descricaoHumor = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
+                                
+                                humor = new Humor(idHumor, descricaoHumor);
                             }
                         }
                     }
@@ -262,10 +264,11 @@ namespace TopHealth2
                     {
                         while (leitor.Read())
                         {
-                            humores.Add(new Humor(
-                                Convert.ToInt32(leitor["id"]),
-                                leitor["descricao"].ToString()
-                            ));
+
+                            int idHumor = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                            string descricaoHumor = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
+                            
+                            humores.Add(new Humor(idHumor, descricaoHumor));
                         }
                     }
                 }
@@ -348,9 +351,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<QualidadeSono> ObterQualidadeSonoAsync(int id)
+        public static async Task<QualidadeSono ? > ObterQualidadeSonoAsync(int id)
         {
-            QualidadeSono sono = null;
+            QualidadeSono ? sono = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -363,10 +366,11 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                sono = new QualidadeSono(
-                                    Convert.ToInt32(leitor["id"]),
-                                    leitor["Descricao"].ToString()
-                                );
+
+                                int idQualidadeSono = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                string descricaoQualidadeSono = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
+                                
+                                sono = new QualidadeSono(idQualidadeSono, descricaoQualidadeSono);
                             }
                         }
                     }
@@ -392,10 +396,11 @@ namespace TopHealth2
                     {
                         while (leitor.Read())
                         {
-                            qualidades.Add(new QualidadeSono(
-                                Convert.ToInt32(leitor["id"]),
-                                leitor["Descricao"].ToString()
-                            ));
+
+                            int idQualidadeSono = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                            string descricaoQualidadeSono = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
+                            
+                            qualidades.Add(new QualidadeSono(idQualidadeSono, descricaoQualidadeSono));
                         }
                     }
                 }
@@ -477,9 +482,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<Alimentacao> ObterAlimentacaoAsync(int id)
+        public static async Task<Alimentacao ?> ObterAlimentacaoAsync(int id)
         {
-            Alimentacao alimentacao = null;
+            Alimentacao ? alimentacao = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -492,11 +497,12 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                alimentacao = new Alimentacao(
-                                    Convert.ToInt32(leitor["id"]),
-                                    leitor["Descricao"].ToString(),
-                                    Convert.ToInt32(leitor["ValorEnergetico"])
-                                );
+
+                                int idAlimentacao = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                string descricao = leitor["Descricao"] != DBNull.Value? leitor["Descricao"].ToString()! : string.Empty;
+                                int valorEnergetico1 = leitor["ValorEnergetico"] != DBNull.Value ? Convert.ToInt32(leitor["ValorEnergetico"]) : 0;
+                                
+                                alimentacao = new Alimentacao(idAlimentacao, descricao, valorEnergetico1);
                             }
                         }
                     }
@@ -522,11 +528,12 @@ namespace TopHealth2
                     {
                         while (leitor.Read())
                         {
-                            alimentacoes.Add(new Alimentacao(
-                                Convert.ToInt32(leitor["id"]),
-                                leitor["Descricao"].ToString(),
-                                Convert.ToInt32(leitor["ValorEnergetico"])
-                            ));
+
+                            int idAlimentacao = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                            string descricao = leitor["Descricao"] != DBNull.Value? leitor["Descricao"].ToString()! : string.Empty;
+                            int valorEnergetico1 = leitor["ValorEnergetico"] != DBNull.Value ? Convert.ToInt32(leitor["ValorEnergetico"]) : 0;
+                            
+                            alimentacoes.Add(new Alimentacao(idAlimentacao, descricao, valorEnergetico1));
                         }
                     }
                 }
@@ -613,9 +620,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<AtividadeFisica> ObterAtividadeFisicaAsync(int id)
+        public static async Task<AtividadeFisica ?> ObterAtividadeFisicaAsync(int id)
         {
-            AtividadeFisica atividade = null;
+            AtividadeFisica ? atividade = null; //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -628,11 +635,11 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                atividade = new AtividadeFisica(
-                                    Convert.ToInt32(leitor["id"]),
-                                    leitor["TipoAtividade"].ToString(),
-                                    Convert.ToInt32(leitor["DuracaoMinutos"])
-                                );
+                                int idAtividade = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                                string tipo = leitor["TipoAtividade"] != DBNull.Value ? leitor["TipoAtividade"].ToString()! : string.Empty;
+                                int duracao = leitor["DuracaoMinutos"] != DBNull.Value ? Convert.ToInt32(leitor["DuracaoMinutos"]) : 0;
+
+                                atividade = new AtividadeFisica(idAtividade, tipo, duracao);
                             }
                         }
                     }
@@ -644,6 +651,7 @@ namespace TopHealth2
             });
             return atividade;
         }
+
 
         public static async Task<List<AtividadeFisica>> ObterTodasAtividadesFisicasAsync()
         {
@@ -658,11 +666,12 @@ namespace TopHealth2
                     {
                         while (leitor.Read())
                         {
-                            atividades.Add(new AtividadeFisica(
-                                Convert.ToInt32(leitor["id"]),
-                                leitor["TipoAtividade"].ToString(),
-                                Convert.ToInt32(leitor["DuracaoMinutos"])
-                            ));
+
+                            int idAtividade = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
+                            string tipo = leitor["TipoAtividade"] != DBNull.Value ? leitor["TipoAtividade"].ToString()! : string.Empty;
+                            int duracao = leitor["DuracaoMinutos"] != DBNull.Value ? Convert.ToInt32(leitor["DuracaoMinutos"]) : 0;
+
+                            atividades.Add(new AtividadeFisica(idAtividade, tipo, duracao));
                         }
                     }
                 }
@@ -724,9 +733,9 @@ namespace TopHealth2
         }
 
         
-        public static async Task<Configuracao> ObterConfiguracaoAsync(int userId)
+        public static async Task<Configuracao ? > ObterConfiguracaoAsync(int userId)
         {
-            Configuracao configuracao = null;
+            Configuracao ? configuracao = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -739,12 +748,13 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-                                configuracao = new Configuracao(
-                                    Convert.ToInt32(leitor["UserId"]),
-                                    leitor["CaminhoBanco"].ToString(),
-                                    leitor["Tema"].ToString(),
-                                    Convert.ToInt32(leitor["FlagImportacao"])
-                                );
+
+                                int idUsuario = leitor["UserId"] != DBNull.Value ? Convert.ToInt32(leitor["UserId"]) : -1;
+                                string caminhoBanco = leitor["CaminhoBanco"] != DBNull.Value ? leitor["CaminhoBanco"].ToString()! : string.Empty;
+                                string tema = leitor["Tema"] != DBNull.Value ? leitor["Tema"].ToString()! : string.Empty;
+                                int FlagImportacao1 = leitor["FlagImportacao"] != DBNull.Value ? Convert.ToInt32(leitor["FlagImportacao"]) : 0;
+
+                                configuracao = new Configuracao(idUsuario, caminhoBanco, tema, FlagImportacao1);
                             }
                         }
                     }
