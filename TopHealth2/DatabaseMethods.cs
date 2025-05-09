@@ -39,6 +39,8 @@ namespace TopHealth2
 
                         id = Convert.ToInt32(comando.ExecuteScalar());
                     }
+
+                    Console.WriteLine("Registro criado com sucesso!");
                 }
                 catch (Exception ex)
                 {
