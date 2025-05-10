@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\Pasta\\TopHealth-1\\TopHealth2\\TopHealth2.csproj": {}
+    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\Pasta\\TopHealth-1\\TopHealth2\\TopHealth2.csproj": {
+    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\Pasta\\TopHealth-1\\TopHealth2\\TopHealth2.csproj",
+        "projectUniqueName": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
         "projectName": "TopHealth2",
-        "projectPath": "D:\\Desktop\\Pasta\\TopHealth-1\\TopHealth2\\TopHealth2.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\Pasta\\TopHealth-1\\TopHealth2\\obj\\",
+        "projectPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+        "packagesPath": "C:\\Users\\davia\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\davia\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -37,12 +37,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Avalonia": {
               "target": "Package",
@@ -89,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

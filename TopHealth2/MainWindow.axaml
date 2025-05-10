@@ -68,7 +68,7 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    
+                    Click="HistRegi"
                     Content="Historico existente"
                 />
                  <Button Grid.Row="2" Grid.Column="1"

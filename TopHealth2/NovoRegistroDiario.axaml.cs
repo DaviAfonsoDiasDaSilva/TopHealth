@@ -10,6 +10,7 @@ public partial class NovoRegistroDiario : Window
     public NovoRegistroDiario()
     {
         InitializeComponent();
+        
     }
     private void HumorSelected(object sender, SelectionChangedEventArgs e)
     {
