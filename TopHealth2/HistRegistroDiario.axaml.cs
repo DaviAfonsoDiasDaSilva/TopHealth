@@ -30,10 +30,16 @@ public partial class HistRegistroDiario : Window
         }
     }
 
-    private void BotRet2(object? sender, RoutedEventArgs e)
+    private void BotRetHist(object? sender, RoutedEventArgs e)
     {
         var TelaIni = new MainWindow();
         TelaIni.Show();
+        this.Close();
+    }
+    private void BotEdit(object? sender, RoutedEventArgs e)
+    {
+        var TelaEdit = new EditRegi();
+        TelaEdit.Show();
         this.Close();
     }
 
