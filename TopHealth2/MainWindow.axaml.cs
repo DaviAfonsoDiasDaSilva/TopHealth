@@ -9,7 +9,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
          DataContext = new NovoRegistroDiario();
-         DataContext = new HistRegistroDiario();
+         
     }
     private void NovoRegi(object? sender, RoutedEventArgs e)
     {
@@ -18,10 +18,10 @@ public partial class MainWindow : Window
         NovoRegiWin.Show();
         this.Close();
     }
-
-    private void  HistRegi(object? sender, RoutedEventArgs e){
-        var HistRegiWin = new HistRegistroDiario();
-        HistRegiWin.Show();
+    private void Login(object? sender, RoutedEventArgs e){
+        var LoginWin = new Login();
+        LoginWin.Show();
         this.Close();
     }
+    
 }

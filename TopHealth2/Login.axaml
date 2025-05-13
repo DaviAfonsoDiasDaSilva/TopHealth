@@ -1,0 +1,86 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TopHealth2.Login"
+        Title="Login" Width="1000" Height="800">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions> 
+                
+                <Image Grid.Row="0" Grid.Column="0"
+                    Source="../Assets/Imagens/TopHealthBackground.png"
+                    Stretch="UniformToFill"
+                />
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30*" />
+                    <RowDefinition Height="30*" />
+                    <RowDefinition Height="40*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Row="0" Grid.Column="0"
+                    x:Name="Nome"
+                    Watermark="Digite seu nome"
+                    MinHeight="100"
+                    MaxHeight="400"
+                    MinWidth="100"
+                    MaxWidth="400"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Background="#FFF"
+                    BorderBrush="#0078D7"
+                    BorderThickness="1"
+                    Padding="10"
+                    FontSize="16">
+                 <TextBox.Styles>
+                    <Style Selector="TextBox">
+                    <Setter Property="CornerRadius" Value="12"/>
+                    </Style>
+                </TextBox.Styles>
+                </TextBox> 
+                <TextBox Grid.Row="1" Grid.Column="0"
+                    x:Name="Senha"
+                    Watermark="Digite sua senha"
+                    MinWidth="100"
+                    MaxWidth="400"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Background="#FFF"
+                    BorderBrush="#0078D7"
+                    BorderThickness="1"
+                    Padding="10"
+                    FontSize="16">
+                 <TextBox.Styles>
+                    <Style Selector="TextBox">
+                    <Setter Property="CornerRadius" Value="12"/>
+                    </Style>
+                </TextBox.Styles>
+                </TextBox> 
+                <Button Grid.Row="2" Grid.Column="0"
+                    Background="RoyalBlue"
+                    Foreground="White"
+                    FontSize="13"
+                    Padding="30"
+                    BorderThickness="2"
+                    BorderBrush="White"
+                    CornerRadius="20"
+                    HorizontalAlignment="Center"
+                    Click="HistRegi"
+                    Content="Entrar"
+                />
+            </Grid>
+        </Grid>
+</Window>

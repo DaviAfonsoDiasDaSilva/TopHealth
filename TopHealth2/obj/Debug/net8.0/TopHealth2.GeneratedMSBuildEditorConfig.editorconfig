@@ -28,6 +28,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/HistRegistroDiario.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/Login.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
