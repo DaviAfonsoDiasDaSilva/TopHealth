@@ -22,6 +22,9 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/CriaUser.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/EditRegi.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

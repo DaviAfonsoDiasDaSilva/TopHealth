@@ -80,7 +80,7 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    Click="NovoRegi"
+                    Click="CriaUser"
                     Content="Novo Registro"
                 />
             </Grid>

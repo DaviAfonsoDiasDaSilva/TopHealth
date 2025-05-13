@@ -11,11 +11,11 @@ public partial class MainWindow : Window
          DataContext = new NovoRegistroDiario();
          
     }
-    private void NovoRegi(object? sender, RoutedEventArgs e)
+    private void CriaUser(object? sender, RoutedEventArgs e)
     {
         //this.Close(true);
-        var NovoRegiWin = new NovoRegistroDiario();
-        NovoRegiWin.Show();
+        var criaUserWin = new CriaUser();
+        criaUserWin.Show();
         this.Close();
     }
     private void Login(object? sender, RoutedEventArgs e){
