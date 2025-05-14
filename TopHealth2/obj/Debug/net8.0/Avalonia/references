@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Base.dll
 /home/a2023952853/.nuget/packages/avalonia.controls.colorpicker/11.2.7/lib/net8.0/Avalonia.Controls.ColorPicker.dll
 /home/a2023952853/.nuget/packages/avalonia.controls.datagrid/11.2.7/lib/net8.0/Avalonia.Controls.DataGrid.dll
@@ -28,43 +27,11 @@
 /home/a2023952853/.nuget/packages/entityframework/6.4.4/lib/netstandard2.1/EntityFramework.SqlServer.dll
 /home/a2023952853/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
 /home/a2023952853/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
-=======
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Base.dll
-/home/a2023952551/.nuget/packages/avalonia.controls.colorpicker/11.2.7/lib/net8.0/Avalonia.Controls.ColorPicker.dll
-/home/a2023952551/.nuget/packages/avalonia.controls.datagrid/11.2.7/lib/net8.0/Avalonia.Controls.DataGrid.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Controls.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.DesignerSupport.dll
-/home/a2023952551/.nuget/packages/avalonia.desktop/11.2.7/lib/net8.0/Avalonia.Desktop.dll
-/home/a2023952551/.nuget/packages/avalonia.diagnostics/11.2.7/lib/net8.0/Avalonia.Diagnostics.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Dialogs.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.dll
-/home/a2023952551/.nuget/packages/avalonia.fonts.inter/11.2.7/lib/net8.0/Avalonia.Fonts.Inter.dll
-/home/a2023952551/.nuget/packages/avalonia.freedesktop/11.2.7/lib/net8.0/Avalonia.FreeDesktop.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Markup.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Markup.Xaml.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Metal.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.MicroCom.dll
-/home/a2023952551/.nuget/packages/avalonia.native/11.2.7/lib/net8.0/Avalonia.Native.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.OpenGL.dll
-/home/a2023952551/.nuget/packages/avalonia.remote.protocol/11.2.7/lib/net8.0/Avalonia.Remote.Protocol.dll
-/home/a2023952551/.nuget/packages/avalonia.skia/11.2.7/lib/net8.0/Avalonia.Skia.dll
-/home/a2023952551/.nuget/packages/avalonia.themes.fluent/11.2.7/lib/net8.0/Avalonia.Themes.Fluent.dll
-/home/a2023952551/.nuget/packages/avalonia.themes.simple/11.2.7/lib/net8.0/Avalonia.Themes.Simple.dll
-/home/a2023952551/.nuget/packages/avalonia/11.2.7/ref/net8.0/Avalonia.Vulkan.dll
-/home/a2023952551/.nuget/packages/avalonia.win32/11.2.7/lib/net8.0/Avalonia.Win32.dll
-/home/a2023952551/.nuget/packages/avalonia.x11/11.2.7/lib/net8.0/Avalonia.X11.dll
-/home/a2023952551/.nuget/packages/dialoghost.avalonia/0.8.1/lib/netstandard2.0/DialogHost.Avalonia.dll
-/home/a2023952551/.nuget/packages/entityframework/6.4.4/lib/netstandard2.1/EntityFramework.dll
-/home/a2023952551/.nuget/packages/entityframework/6.4.4/lib/netstandard2.1/EntityFramework.SqlServer.dll
-/home/a2023952551/.nuget/packages/harfbuzzsharp/7.3.0.3/lib/net6.0/HarfBuzzSharp.dll
-/home/a2023952551/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/Microsoft.CSharp.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/Microsoft.VisualBasic.Core.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/Microsoft.VisualBasic.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/Microsoft.Win32.Primitives.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/Microsoft.Win32.Registry.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/messagebox.avalonia/3.2.0/lib/netstandard2.0/MsBox.Avalonia.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/mscorlib.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/netstandard.dll
@@ -72,15 +39,6 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.AppContext.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Buffers.dll
 /home/a2023952853/.nuget/packages/system.codedom/4.7.0/ref/netstandard2.0/System.CodeDom.dll
-=======
-/home/a2023952551/.nuget/packages/messagebox.avalonia/3.2.0/lib/netstandard2.0/MsBox.Avalonia.dll
-/snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/mscorlib.dll
-/snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/netstandard.dll
-/home/a2023952551/.nuget/packages/skiasharp/2.88.9/lib/net6.0/SkiaSharp.dll
-/snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.AppContext.dll
-/snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Buffers.dll
-/home/a2023952551/.nuget/packages/system.codedom/4.7.0/ref/netstandard2.0/System.CodeDom.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Collections.Concurrent.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Collections.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Collections.Immutable.dll
@@ -92,26 +50,16 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.ComponentModel.EventBasedAsync.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.ComponentModel.Primitives.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.ComponentModel.TypeConverter.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/system.configuration.configurationmanager/4.7.0/ref/netstandard2.0/System.Configuration.ConfigurationManager.dll
-=======
-/home/a2023952551/.nuget/packages/system.configuration.configurationmanager/4.7.0/ref/netstandard2.0/System.Configuration.ConfigurationManager.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Configuration.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Console.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Core.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Data.Common.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Data.DataSetExtensions.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Data.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/system.data.sqlclient/4.8.1/ref/netcoreapp2.1/System.Data.SqlClient.dll
 /home/a2023952853/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.119/lib/netstandard2.1/System.Data.SQLite.dll
 /home/a2023952853/.nuget/packages/system.data.sqlite.ef6/1.0.119/lib/netstandard2.1/System.Data.SQLite.EF6.dll
-=======
-/home/a2023952551/.nuget/packages/system.data.sqlclient/4.8.1/ref/netcoreapp2.1/System.Data.SqlClient.dll
-/home/a2023952551/.nuget/packages/stub.system.data.sqlite.core.netstandard/1.0.119/lib/netstandard2.1/System.Data.SQLite.dll
-/home/a2023952551/.nuget/packages/system.data.sqlite.ef6/1.0.119/lib/netstandard2.1/System.Data.SQLite.EF6.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Diagnostics.Contracts.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Diagnostics.Debug.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Diagnostics.DiagnosticSource.dll
@@ -143,11 +91,7 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.FileSystem.Watcher.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.IsolatedStorage.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.MemoryMappedFiles.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/system.io.pipelines/8.0.0/lib/net8.0/System.IO.Pipelines.dll
-=======
-/home/a2023952551/.nuget/packages/system.io.pipelines/8.0.0/lib/net8.0/System.IO.Pipelines.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.Pipes.AccessControl.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.Pipes.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.IO.UnmanagedMemoryStream.dll
@@ -217,11 +161,7 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.Cryptography.Primitives.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.Cryptography.X509Certificates.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/system.security.permissions/4.7.0/ref/netcoreapp3.0/System.Security.Permissions.dll
-=======
-/home/a2023952551/.nuget/packages/system.security.permissions/4.7.0/ref/netcoreapp3.0/System.Security.Permissions.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.Principal.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.Principal.Windows.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Security.SecureString.dll
@@ -249,11 +189,7 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Web.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Web.HttpUtility.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Windows.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/system.windows.extensions/4.7.0/ref/netcoreapp3.0/System.Windows.Extensions.dll
-=======
-/home/a2023952551/.nuget/packages/system.windows.extensions/4.7.0/ref/netcoreapp3.0/System.Windows.Extensions.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.Linq.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.ReaderWriter.dll
@@ -263,9 +199,5 @@
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.XmlSerializer.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.XPath.dll
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/System.Xml.XPath.XDocument.dll
-<<<<<<< HEAD
 /home/a2023952853/.nuget/packages/tmds.dbus.protocol/0.20.0/lib/net8.0/Tmds.DBus.Protocol.dll
-=======
-/home/a2023952551/.nuget/packages/tmds.dbus.protocol/0.20.0/lib/net8.0/Tmds.DBus.Protocol.dll
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
 /snap/dotnet-sdk/256/packs/Microsoft.NETCore.App.Ref/8.0.14/ref/net8.0/WindowsBase.dll

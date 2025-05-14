@@ -4,22 +4,13 @@
     <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
     <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
     <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
-<<<<<<< HEAD
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/a2023952853/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/a2023952853/.nuget/packages/</NuGetPackageFolders>
-=======
-    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/a2023952551/.nuget/packages/</NuGetPackageRoot>
-    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/a2023952551/.nuget/packages/</NuGetPackageFolders>
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.11.1</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-<<<<<<< HEAD
     <SourceRoot Include="/home/a2023952853/.nuget/packages/" />
-=======
-    <SourceRoot Include="/home/a2023952551/.nuget/packages/" />
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)entityframework/6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)entityframework/6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.props')" />
@@ -28,16 +19,9 @@
     <Import Project="$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly/7.3.0.3/buildTransitive/netstandard1.0/HarfBuzzSharp.NativeAssets.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)harfbuzzsharp.nativeassets.webassembly/7.3.0.3/buildTransitive/netstandard1.0/HarfBuzzSharp.NativeAssets.WebAssembly.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-<<<<<<< HEAD
     <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">/home/a2023952853/.nuget/packages/entityframework/6.4.4</PkgEntityFramework>
     <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">/home/a2023952853/.nuget/packages/system.data.sqlite.ef6/1.0.119</PkgSystem_Data_SQLite_EF6>
     <PkgAvalonia_BuildServices Condition=" '$(PkgAvalonia_BuildServices)' == '' ">/home/a2023952853/.nuget/packages/avalonia.buildservices/0.0.31</PkgAvalonia_BuildServices>
     <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">/home/a2023952853/.nuget/packages/avalonia/11.2.7</PkgAvalonia>
-=======
-    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">/home/a2023952551/.nuget/packages/entityframework/6.4.4</PkgEntityFramework>
-    <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">/home/a2023952551/.nuget/packages/system.data.sqlite.ef6/1.0.119</PkgSystem_Data_SQLite_EF6>
-    <PkgAvalonia_BuildServices Condition=" '$(PkgAvalonia_BuildServices)' == '' ">/home/a2023952551/.nuget/packages/avalonia.buildservices/0.0.31</PkgAvalonia_BuildServices>
-    <PkgAvalonia Condition=" '$(PkgAvalonia)' == '' ">/home/a2023952551/.nuget/packages/avalonia/11.2.7</PkgAvalonia>
->>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
   </PropertyGroup>
 </Project>
