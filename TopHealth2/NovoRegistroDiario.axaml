@@ -5,97 +5,120 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="TopHealth2.NovoRegistroDiario"
         Title="NovoRegistroDiario" Width="1000" Height="800">
+    <Grid>
         <Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions> 
-                
-                <Image Grid.Row="0" Grid.Column="0"
-                    Source="../Assets/Imagens/TopHealthBackground.png"
-                    Stretch="UniformToFill"
-                />
-                    <TextBlock
-                    Text="Selecione a qualidade do seu sono e humor"
-                    FontSize="40"
-                    FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
-                    Foreground="White"
-                    FontWeight="Bold"
-                    TextAlignment="Center"
-                    />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions> 
 
-                    <TextBlock
-                    Text="&#x0a;alem de descrever a sua alimentação e dizer o quanto&#x0a;
-                    você faz de atividade fisica" 
-                    FontSize="40"
-                    FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
-                    Foreground="White"
-                    FontWeight="Bold"
-                    TextAlignment="Center"
-                    />
+            <Image Grid.Row="0" Grid.Column="0"
+                   Source="../Assets/Imagens/TopHealthBackground.png"
+                   Stretch="UniformToFill"
+            />
+            <TextBlock Text="Selecione a qualidade do seu sono e humor"
+                       FontSize="40"
+                       FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+            />
 
-            </Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20*" />
-                    <RowDefinition Height="30*" />
-                    <RowDefinition Height="50*" />
-                </Grid.RowDefinitions>
+            <TextBlock Text="&#x0a;alem de descrever a sua alimentação e dizer o quanto&#x0a; você faz de atividade fisica"
+                       FontSize="40"
+                       FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+            />
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="20*" />
+                <RowDefinition Height="30*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                </Grid.ColumnDefinitions> 
-                
-                <ComboBox Grid.Row="1" Grid.Column="0" 
-                        x:Name="Humor"
-                        Width="200"
-                        Margin="0 10 0 0"
-                        SelectionChanged="HumorSelected"
-                        SelectedIndex="-1"
-                        PlaceholderText="Humor"
-                        >
-                <ComboBoxItem Content="Feliz" />
-                <ComboBoxItem Content="Trite" />
-                <ComboBoxItem Content="Iritado(a)" />
-                <ComboBoxItem Content="Desmotivado" />
-                <ComboBoxItem Content="Motivado" />
-                </ComboBox>
-                <ComboBox Grid.Row="1" Grid.Column="1" 
-                        x:Name="Sono"
-                        Width="200"
-                        Margin="0 10 0 0"
-                        SelectionChanged="SonoQuaSelec"
-                        SelectedIndex="-1"
-                        PlaceholderText="Qualidade do sono"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="25*"/>
+            </Grid.ColumnDefinitions> 
 
-                        >
-                <ComboBoxItem Content="Muito boa" />
-                <ComboBoxItem Content="Boa" />
-                <ComboBoxItem Content="Mediano" />
-                <ComboBoxItem Content="Ruim" />
-                <ComboBoxItem Content="Muito Ruim" />
-                </ComboBox>
-                <TextBox Grid.Row="1" Grid.Column="2"
-                        x:Name="HabitAlime"
-                        Watermark="Descreva seus habitos alimentares"
+            <ComboBox Grid.Row="1" Grid.Column="0" 
+                      x:Name="Humor"
+                      Width="200"
+                      Margin="0 10 0 0"
+                      SelectionChanged="HumorSelected"
+                      SelectedIndex="-1"
+                      PlaceholderText="Humor">
+                <ComboBoxItem Content="Feliz" Tag="1"/>
+                <ComboBoxItem Content="Triste" Tag="2"/>
+                <ComboBoxItem Content="Irritado(a)" Tag="3"/>
+                <ComboBoxItem Content="Desmotivado" Tag="4"/>
+                <ComboBoxItem Content="Motivado" Tag="5"/>
+            </ComboBox>
 
-                />
+            <ComboBox Grid.Row="1" Grid.Column="1" 
+                      x:Name="Sono"
+                      Width="200"
+                      Margin="0 10 0 0"
+                      SelectionChanged="SonoQuaSelec"
+                      SelectedIndex="-1"
+                      PlaceholderText="Qualidade do sono">
+                <ComboBoxItem Content="Muito boa" Tag="1"/>
+                <ComboBoxItem Content="Boa" Tag="2"/>
+                <ComboBoxItem Content="Mediano" Tag="3"/>
+                <ComboBoxItem Content="Ruim" Tag="4"/>
+                <ComboBoxItem Content="Muito Ruim" Tag="5"/>
+            </ComboBox>
 
-                <NumericUpDown Grid.Row="1" Grid.Column="3"
-                    Name="QuantAtvFisc"
-                    Minimum="0"
-                    Maximum="100"
-                    Increment="1"
-                    Value="10" 
-                />
-                <Button Grid.Row="2" Grid.Column="0"
+            <ComboBox Grid.Row="1" Grid.Column="2" 
+                      x:Name="Alimentacao"
+                      Width="300"
+                      Margin="0 10 0 0"
+                      SelectionChanged="AlimQuaSelec"
+                      SelectedIndex="-1"
+                      PlaceholderText="Qualidade da Alimentação">
+                <ComboBoxItem Content="Excelente" Tag="1"/>
+                <ComboBoxItem Content="Muito boa" Tag="2"/>
+                <ComboBoxItem Content="Boa" Tag="3"/>
+                <ComboBoxItem Content="Mediana" Tag="4"/>
+                <ComboBoxItem Content="Ruim" Tag="5"/>
+                <ComboBoxItem Content="Muito Ruim" Tag="6"/>
+            </ComboBox>
+
+            <ComboBox Grid.Row="1" Grid.Column="3" 
+                      x:Name="AtividadeFisica"
+                      Width="350"
+                      Margin="0 10 0 0"
+                      SelectionChanged="AtvFisQuaSelec"
+                      SelectedIndex="-1"
+                      PlaceholderText="Qualidade de Atividade Física">
+                <ComboBoxItem Content="Excelente" Tag="1"/>
+                <ComboBoxItem Content="Muito boa" Tag="2"/>
+                <ComboBoxItem Content="Boa" Tag="3"/>
+                <ComboBoxItem Content="Ainda Melhorando" Tag="4"/>
+                <ComboBoxItem Content="Mediana" Tag="5"/>
+                <ComboBoxItem Content="Ruim" Tag="6"/>
+                <ComboBoxItem Content="Muito Ruim" Tag="7"/>
+            </ComboBox>
+
+            <NumericUpDown Grid.Row="2" Grid.Column="3"
+                           Name="QuantAtvFisc"
+                           Minimum="0"
+                           Maximum="100"
+                           Increment="1"
+                           Value="10" 
+            />
+
+            <Button Grid.Row="3" Grid.Column="0"
                     Content="Salvar" Click="BotSalv" Margin="0,20,0,0"
                     Background="RoyalBlue"
                     Foreground="White"
@@ -105,8 +128,9 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                />
-                <Button Grid.Row="2" Grid.Column="3"
+            />
+
+            <Button Grid.Row="3" Grid.Column="3"
                     Background="RoyalBlue"
                     Foreground="White"
                     FontSize="13"
@@ -116,7 +140,7 @@
                     CornerRadius="20"
                     HorizontalAlignment="Center"
                     Content="Retornar" Click="BotRet" Margin="0,20,0,0"
-                />
-            </Grid>
+            />
         </Grid>
+    </Grid>
 </Window>
