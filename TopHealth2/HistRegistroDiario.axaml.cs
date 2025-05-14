@@ -36,11 +36,9 @@ public partial class HistRegistroDiario : Window
         TelaIni.Show();
         this.Close();
     }
-    private void BotEdit(object? sender, RoutedEventArgs e)
+    private void BotsalvEdit(object? sender, RoutedEventArgs e)
     {
-        var TelaEdit = new EditRegi();
-        TelaEdit.Show();
-        this.Close();
+
     }
 
     

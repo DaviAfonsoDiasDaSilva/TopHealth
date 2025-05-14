@@ -107,7 +107,7 @@
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    Content="Editar" Click="BotEdit" Margin="0,20,0,0"
+                    Content="Editar" Click="BotSalvEdit" Margin="0,20,0,0"
                 />
                 
             </Grid>
