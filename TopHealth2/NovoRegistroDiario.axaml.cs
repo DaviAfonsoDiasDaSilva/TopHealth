@@ -52,16 +52,15 @@ public partial class NovoRegistroDiario : Window
     }
 
     private async void BotSalv(object? sender, RoutedEventArgs e)
-    {
-        int novoId = -1;
-        int novoUseId = -1;
+    {   
+        int UserId = 1;
         string data = DateTime.Now.ToString("yyyy-MM-dd");
         int HumorId = GetIdFromComboBox(Humor);
         int SonoId = GetIdFromComboBox(Sono);
         int AlimentacaoId = GetIdFromTextBox(Alimentacao);
         int AtividadeFisicaId = GetValueFromNumericUpDown(AtividadeFisica);
         
-        RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
+        RegistroDiario regiDia= new RegistroDiario(UserId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
         await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);
     }
