@@ -278,4 +278,55 @@ public class Configuracao
         _tema = tema;
         _flagImportacao = flagImportacao;
     }
+
+    public class Usuario
+    {
+        private int _id;
+        private string _Nome;
+        private string _Sobrenome;
+        private string _email;
+        private string _senha;
+
+
+        public int Id
+        {
+            get {return _id;}
+            set {_id = value;}
+        }
+
+        public string Nome
+        {
+            get {return _Nome;}
+            set {_Nome = value;}
+        }
+
+        public string Sobrenome
+        {
+            get {return _Sobrenome;}
+            set {_Sobrenome = value;}
+        }
+
+        public string Email
+        {
+            get {return _email;}
+            set {_email = value;}
+        }
+
+        public string Senha
+        {
+            get {return _senha;}
+            set {_senha = value;}
+        }
+        
+        public Usuario(int id, string Nome, string Sobrenome, string email, string senha)
+        {
+            _id = id;
+            _Nome = Nome;
+            _Sobrenome = Sobrenome;
+            _email = email;
+            _senha = senha;
+        }
+
+        
+    }
 }
