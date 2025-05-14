@@ -25,7 +25,8 @@
                     <RowDefinition Height="20*" />
                     <RowDefinition Height="20*" />
                     <RowDefinition Height="20*" />
-                    <RowDefinition Height="40*" />
+                    <RowDefinition Height="20*" />
+                    <RowDefinition Height="20*" />
                 </Grid.RowDefinitions>
 
                 <TextBlock
@@ -112,6 +113,17 @@
                         Content="Voltar"
                     />
                 </Grid>
+                <Button  Grid.Row="4"
+                        Background="RoyalBlue"
+                        Foreground="White"
+                        FontSize="13"
+                        Padding="60"
+                        BorderThickness="2"
+                        BorderBrush="White"
+                        CornerRadius="20"
+                        HorizontalAlignment="Center"
+                        Click="CriaUser"
+                        Content="Cria conta"/>
             </Grid>
         </Grid>
 </Window>

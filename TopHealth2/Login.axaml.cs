@@ -20,4 +20,11 @@ public partial class Login : Window
         TelaIni.Show();
         this.Close();
     }
+        private void CriaUser(object? sender, RoutedEventArgs e)
+    {
+        //this.Close(true);
+        var criaUserWin = new CriaUser();
+        criaUserWin.Show();
+        this.Close();
+    }
 }
