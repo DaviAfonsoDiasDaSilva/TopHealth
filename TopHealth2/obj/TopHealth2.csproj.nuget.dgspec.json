@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/TopHealth2.csproj": {}
+    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {}
   },
   "projects": {
-    "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/TopHealth2.csproj": {
+    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/TopHealth2.csproj",
+        "projectUniqueName": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
         "projectName": "TopHealth2",
-        "projectPath": "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/TopHealth2.csproj",
-        "packagesPath": "/home/a2023952853/.nuget/packages/",
-        "outputPath": "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/obj/",
+        "projectPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+        "packagesPath": "C:\\Users\\davia\\.nuget\\packages\\",
+        "outputPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/a2023952853/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\davia\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -88,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/256/sdk/8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

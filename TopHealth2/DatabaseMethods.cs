@@ -74,7 +74,7 @@ namespace TopHealth2
                                 int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
                                 int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
                                 
-                                registro = new RegistroDiario(idRegistroDiario, idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica);
+                                registro = new RegistroDiario( idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica,idRegistroDiario);
                             }
                         }
                     }
@@ -124,7 +124,7 @@ namespace TopHealth2
                                 int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
                                 int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
 
-                                registros.Add(new RegistroDiario(idRegistroDiario, idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica));
+                                registros.Add(new RegistroDiario( idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica,idRegistroDiario));
                             }
                         }
                     }
@@ -155,7 +155,6 @@ namespace TopHealth2
                             AtividadeFisicaId = @AtividadeFisicaId 
                         WHERE id = @id", conexao))
                     {
-                        comando.Parameters.AddWithValue("@id", registro.Id);
                         comando.Parameters.AddWithValue("@UserId", registro.UserId);
                         comando.Parameters.AddWithValue("@Data", registro.Data);
                         comando.Parameters.AddWithValue("@HumorId", registro.HumorId);

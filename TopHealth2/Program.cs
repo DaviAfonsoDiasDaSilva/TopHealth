@@ -23,7 +23,7 @@ class Program
 
 public static class Database
 {
-   public static string _caminho = @"Data Source=/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/bancoTAPOO.db";
+   public static string _caminho = @"Data Source=./bancoTAPOO.db";
 
     public static void TestarConexao()
     {
@@ -116,7 +116,7 @@ public class RegistroDiario
         set { _atividadeFisicaId = value; } 
     }
 
-    public RegistroDiario(int id, int userId, string data, int humorId, int sonoId, int alimentacaoId, int atividadeFisicaId)
+    public RegistroDiario(int userId, string data, int humorId, int sonoId, int alimentacaoId, int atividadeFisicaId, int id = -1)
     {
         _id = id;
         _userId = userId;
@@ -126,6 +126,7 @@ public class RegistroDiario
         _alimentacaoId = alimentacaoId;
         _atividadeFisicaId = atividadeFisicaId;
     }
+
 }
 
 public class Humor
