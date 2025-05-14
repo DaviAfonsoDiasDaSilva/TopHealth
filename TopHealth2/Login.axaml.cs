@@ -1,3 +1,4 @@
+using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 
@@ -9,7 +10,18 @@ public partial class Login : Window
         InitializeComponent();
         DataContext = new HistRegistroDiario();
     }
-    private void  HistRegi(object? sender, RoutedEventArgs e){
+    private async void HistRegi(object? sender, RoutedEventArgs e)
+    {
+        string nome = Nome.Text?.Trim() ?? "";
+        string senha = Senha.Text?.Trim() ?? "";
+
+        if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(senha))
+        {
+            Console.WriteLine("Por favor, preencha todos os campos!");
+            return;
+
+        }
+
         var HistRegiWin = new HistRegistroDiario();
         HistRegiWin.Show();
         this.Close();
