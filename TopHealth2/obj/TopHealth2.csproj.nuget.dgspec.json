@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/TopHealth2.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/a2023952853/.nuget/NuGet/NuGet.Config"
+=======
+    "/home/a2023952551/Área de Trabalho/TrabalhoTapoo/TopHealth-1/TopHealth2/TopHealth2.csproj": {}
+  },
+  "projects": {
+    "/home/a2023952551/Área de Trabalho/TrabalhoTapoo/TopHealth-1/TopHealth2/TopHealth2.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/a2023952551/Área de Trabalho/TrabalhoTapoo/TopHealth-1/TopHealth2/TopHealth2.csproj",
+        "projectName": "TopHealth2",
+        "projectPath": "/home/a2023952551/Área de Trabalho/TrabalhoTapoo/TopHealth-1/TopHealth2/TopHealth2.csproj",
+        "packagesPath": "/home/a2023952551/.nuget/packages/",
+        "outputPath": "/home/a2023952551/Área de Trabalho/TrabalhoTapoo/TopHealth-1/TopHealth2/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/a2023952551/.nuget/NuGet/NuGet.Config"
+>>>>>>> d96673374909728acfb980cf72aae8db51ae68d6
         ],
         "originalTargetFrameworks": [
           "net8.0"
