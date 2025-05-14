@@ -30,22 +30,18 @@ public partial class NovoRegistroDiario : Window
         }
     }
 
-    private void AlimQuaSelec(object sender, SelectionChangedEventArgs e)
+    /*private void (object sender, SelectionChangedEventArgs e)
     {   
-        var comboBox = sender as ComboBox;
-        if (comboBox.SelectedItem is ComboBoxItem item)
-        {
-            
-        }
+        var textBox = sender as TextBox;
+    if (textBox != null)
+    {
+        // Faça algo com textBox.Text
     }
+    }*/
 
     private void AtvFisQuaSelec(object sender, SelectionChangedEventArgs e)
     {   
-        var comboBox = sender as ComboBox;
-        if (comboBox.SelectedItem is ComboBoxItem item)
-        {
-            
-        }
+ 
     }
 
     private void BotRet(object? sender, RoutedEventArgs e)
@@ -62,8 +58,8 @@ public partial class NovoRegistroDiario : Window
         string data = DateTime.Now.ToString("yyyy-MM-dd");
         int HumorId = GetIdFromComboBox(Humor);
         int SonoId = GetIdFromComboBox(Sono);
-        int AlimentacaoId = GetIdFromComboBox(Alimentacao);
-        int AtividadeFisicaId = GetIdFromComboBox(AtividadeFisica);
+        int AlimentacaoId = GetIdFromTextBox(Alimentacao);
+        int AtividadeFisicaId = GetValueFromNumericUpDown(AtividadeFisica);
         
         RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
@@ -71,11 +67,23 @@ public partial class NovoRegistroDiario : Window
     }
 
     private int GetIdFromComboBox(ComboBox comboBox)
-{
-    if (comboBox.SelectedItem is ComboBoxItem item && item.Tag is string tagStr && int.TryParse(tagStr, out int id))
     {
-        return id;
+        if (comboBox.SelectedItem is ComboBoxItem item && item.Tag is string tagStr && int.TryParse(tagStr, out int id))
+        {
+            return id;
+        }
+        return -1; // valor padrão caso nada seja selecionado
     }
-    return -1; // valor padrão caso nada seja selecionado
-}
+    private int GetIdFromTextBox(TextBox textBox)
+    {
+        if (int.TryParse(textBox.Text, out int id))
+        {
+            return id;
+        }
+        return -1; // valor padrão caso a conversão falhe
+    }
+    private int GetValueFromNumericUpDown(NumericUpDown numericUpDown)
+    {
+        return (int)numericUpDown.Value;
+    }
 }

@@ -23,7 +23,7 @@ class Program
 
 public static class Database
 {
-   public static string _caminho = @"Data Source=D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\bancoTAPOO.db";
+   public static string _caminho = @"Data Source=/home/a2023952853/Área de Trabalho/TopHealth/TopHealth2/bancoTAPOO.db";
 
     public static void TestarConexao()
     {
