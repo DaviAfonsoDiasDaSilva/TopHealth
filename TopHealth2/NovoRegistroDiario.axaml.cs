@@ -30,6 +30,24 @@ public partial class NovoRegistroDiario : Window
         }
     }
 
+    private void AlimQuaSelec(object sender, SelectionChangedEventArgs e)
+    {   
+        var comboBox = sender as ComboBox;
+        if (comboBox.SelectedItem is ComboBoxItem item)
+        {
+            
+        }
+    }
+
+    private void AtvFisQuaSelec(object sender, SelectionChangedEventArgs e)
+    {   
+        var comboBox = sender as ComboBox;
+        if (comboBox.SelectedItem is ComboBoxItem item)
+        {
+            
+        }
+    }
+
     private void BotRet(object? sender, RoutedEventArgs e)
     {
         var TelaIni = new MainWindow();
@@ -42,13 +60,22 @@ public partial class NovoRegistroDiario : Window
         int novoId = -1;
         int novoUseId = -1;
         string data = DateTime.Now.ToString("yyyy-MM-dd");
-        int HumorId = -1;
-        int SonoId = -1;
-        int AlimentacaoId = -1;
-        int AtividadeFisicaId = -1;
+        int HumorId = GetIdFromComboBox(Humor);
+        int SonoId = GetIdFromComboBox(Sono);
+        int AlimentacaoId = GetIdFromComboBox(Alimentacao);
+        int AtividadeFisicaId = GetIdFromComboBox(AtividadeFisica);
         
         RegistroDiario regiDia= new RegistroDiario(novoId,novoUseId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
         await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);
     }
+
+    private int GetIdFromComboBox(ComboBox comboBox)
+{
+    if (comboBox.SelectedItem is ComboBoxItem item && item.Tag is string tagStr && int.TryParse(tagStr, out int id))
+    {
+        return id;
+    }
+    return -1; // valor padrão caso nada seja selecionado
+}
 }
