@@ -39,9 +39,6 @@ public partial class NovoRegistroDiario : Window
         // Faça algo com textBox.Text
     }
     }*/
-    private void AtvFisQuaSelec(object sender, SelectionChangedEventArgs e)
-    {   
-    }
 
     private void BotRet(object? sender, RoutedEventArgs e)
     {
@@ -63,10 +60,11 @@ public partial class NovoRegistroDiario : Window
 
         await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);*/
          string descricaoAlimentacao = Alimentacao.Text;
+         string descricaoAtividade = AtividadeFisicaText.Text;
         int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, descricaoHumor));
         int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, descricaoSono));
         int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, descricaoAlimentacao, 450));
-        int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, "caminhada", 30));
+        int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, descricaoAtividade, 30));
 
         int idRegistro = await DatabaseMethods.AdicionarRegistroDiarioAsync(
             new RegistroDiario(1, "2025-05-14", idHumor, idSono, idAlimentacao, idAtividade)
