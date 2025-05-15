@@ -12,21 +12,22 @@ public partial class NovoRegistroDiario : Window
         InitializeComponent();
         
     }
+    string descricaoHumor;
     private void HumorSelected(object sender, SelectionChangedEventArgs e)
     {
         var comboBox = sender as ComboBox;
         if (comboBox.SelectedItem is ComboBoxItem item)
         {
-            
+            descricaoHumor = item.Content.ToString();
         }
     }
-
+    string descricaoSono;
     private void SonoQuaSelec(object sender, SelectionChangedEventArgs e)
     {   
         var comboBox = sender as ComboBox;
         if (comboBox.SelectedItem is ComboBoxItem item)
         {
-            
+            descricaoSono = item.Content.ToString();
         }
     }
 
@@ -38,10 +39,10 @@ public partial class NovoRegistroDiario : Window
         // Faça algo com textBox.Text
     }
     }*/
-
+    string Alimentacaotexto;
     private void AtvFisQuaSelec(object sender, SelectionChangedEventArgs e)
     {   
- 
+        Alimentacaotexto = Alimentacao.Text;
     }
 
     private void BotRet(object? sender, RoutedEventArgs e)
@@ -63,9 +64,9 @@ public partial class NovoRegistroDiario : Window
         RegistroDiario regiDia= new RegistroDiario(UserId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
         await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);*/
-        int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, "feliz"));
-        int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, "boa"));
-        int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, "arroz e feijão", 450));
+        int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, descricaoHumor));
+        int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, descricaoSono));
+        int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, Alimentacaotexto, 450));
         int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, "caminhada", 30));
 
         int idRegistro = await DatabaseMethods.AdicionarRegistroDiarioAsync(
@@ -93,8 +94,8 @@ public partial class NovoRegistroDiario : Window
     );
 
     // Mensagem de sucesso
-    await MessageBox.Show(this, "Registro diário salvo com sucesso!", "Sucesso");
-    }*/
+    await MessageBox.Show(this, "Registro diário salvo com sucesso!", "Sucesso");*/
+    }
 
     private int GetIdFromComboBox(ComboBox comboBox)
     {
