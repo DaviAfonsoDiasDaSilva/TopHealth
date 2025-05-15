@@ -3,87 +3,52 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TopHealth2"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="800"
         x:Class="TopHealth2.HistRegistroDiario"
-        Title="HistRegistroDiario" Width="1000" Height="800">
+        Title="Histórico de Registros" Width="1000" Height="800">
 
- <Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions> 
-                
-                <Image Grid.Row="0" Grid.Column="0"
-                    Source="../Assets/Imagens/TopHealthBackground.png"
-                    Stretch="UniformToFill"
-                />
-                    <TextBlock
-                    Text="Esse é o seu histórico de registros"
-                    FontSize="40"
-                    FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+    <Grid>
+        <!-- Imagem de fundo -->
+        <Image Source="../Assets/Imagens/TopHealthBackground.png"
+               Stretch="UniformToFill"
+               ZIndex="0"/>
+        <!-- Conteúdo principal -->
+        <StackPanel ZIndex="1">
+            <TextBlock Text="Esse é o seu histórico de registros"
+                       FontSize="40"
+                       FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                       Foreground="White"
+                       FontWeight="Bold"
+                       TextAlignment="Center"
+                       Margin="0,30,0,30"/>
+            <DataGrid x:Name="RegistroDiarioGrid"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      Margin="20"
+                      Height="600"
+                      x:DataType="local:RegistroDiarioExibicao">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Usuário" Binding="{Binding Usuario}" />
+                    <DataGridTextColumn Header="Data" Binding="{Binding Data}" />
+                    <DataGridTextColumn Header="Humor" Binding="{Binding Humor}" />
+                    <DataGridTextColumn Header="Sono" Binding="{Binding Sono}" />
+                    <DataGridTextColumn Header="Alimentação" Binding="{Binding Alimentacao}" />
+                    <DataGridTextColumn Header="Valor Energético" Binding="{Binding ValorEnergetico}" />
+                    <DataGridTextColumn Header="Atividade Física" Binding="{Binding TipoAtividade}" />
+                    <DataGridTextColumn Header="Duração (min)" Binding="{Binding DuracaoMinutos}" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Background="RoyalBlue"
                     Foreground="White"
-                    FontWeight="Bold"
-                    TextAlignment="Center"
-                    />
-
-            </Grid>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="20*" />
-                    <RowDefinition Height="30*" />
-                    <RowDefinition Height="50*" />
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="25*"/>
-                </Grid.ColumnDefinitions> 
-                
-                <DataGrid Grid.Row="1" Grid.Column="0"
-                          x:Name="RegistroDiarioGrid"
-                          AutoGenerateColumns="False"
-                          IsReadOnly="False"
-                          Margin="10"
-                          x:DataType="local:RegistroDiarioExibicao">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Humor" Binding="{Binding Humor}" />
-                        <DataGridTextColumn Header="Sono" Binding="{Binding Sono}" />
-                        <DataGridTextColumn Header="Alimentação" Binding="{Binding Alimentacao}" />
-                        <DataGridTextColumn Header="Valor Energético" Binding="{Binding ValorEnergetico}" />
-                        <DataGridTextColumn Header="Atividade Física" Binding="{Binding TipoAtividade}" />
-                        <DataGridTextColumn Header="Duração (min)" Binding="{Binding DuracaoMinutos}" />
-                    </DataGrid.Columns>
-                </DataGrid>
-               
-                <Button Grid.Row="2" Grid.Column="3"
-                    Background="RoyalBlue"
-                    Foreground="White"
-                    FontSize="13"
-                    Padding="30"
+                    FontSize="16"
+                    Padding="20"
                     BorderThickness="2"
                     BorderBrush="White"
                     CornerRadius="20"
                     HorizontalAlignment="Center"
-                    Content="Retornar" Click="BotRetHist" Margin="0,20,0,0"
-                />
-                <Button Grid.Row="2" Grid.Column="1"
-                    Background="RoyalBlue"
-                    Foreground="White"
-                    FontSize="13"
-                    Padding="30"
-                    BorderThickness="2"
-                    BorderBrush="White"
-                    CornerRadius="20"
-                    HorizontalAlignment="Center"
-                    Content="Editar" Click="BotSalvEdit" Margin="0,20,0,0"
-                />
-                
-            </Grid>
-        </Grid>
+                    Content="Retornar"
+                    Click="BotRetHist"
+                    Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
 </Window>
