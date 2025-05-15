@@ -16,79 +16,79 @@ namespace TopHealth2
             conexao.Open();
             return conexao;
         }
-        
+
         public static async Task<int> AdicionarUsuarioAsync(Configuracao.Usuario usuario)
-{
-    int id = -1;
-    await Task.Run(() =>
-    {
-        try
         {
-            using (var conexao = new SQLiteConnection(Database._caminho))
+            int id = -1;
+            await Task.Run(() =>
             {
-                conexao.Open();
-                using (var comando = new SQLiteCommand(@"
+                try
+                {
+                    using (var conexao = new SQLiteConnection(Database._caminho))
+                    {
+                        conexao.Open();
+                        using (var comando = new SQLiteCommand(@"
                     INSERT INTO Usuario (Nome, Sobrenome, email, senha) 
                     VALUES (@Nome, @Sobrenome, @email, @senha);
                     SELECT last_insert_rowid();", conexao))
-                {
-                    comando.Parameters.AddWithValue("@Nome", usuario.Nome);
-                    comando.Parameters.AddWithValue("@Sobrenome", usuario.Sobrenome);
-                    comando.Parameters.AddWithValue("@email", usuario.Email);
-                    comando.Parameters.AddWithValue("@senha", usuario.Senha);
-                    id = Convert.ToInt32(comando.ExecuteScalar());
+                        {
+                            comando.Parameters.AddWithValue("@Nome", usuario.Nome);
+                            comando.Parameters.AddWithValue("@Sobrenome", usuario.Sobrenome);
+                            comando.Parameters.AddWithValue("@email", usuario.Email);
+                            comando.Parameters.AddWithValue("@senha", usuario.Senha);
+                            id = Convert.ToInt32(comando.ExecuteScalar());
+                        }
+                    }
                 }
-            }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao adicionar usuário: " + ex.Message);
+                }
+            });
+            return id;
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Erro ao adicionar usuário: " + ex.Message);
-        }
-    });
-    return id;
-}
 
 
         public static async Task<int> AdicionarRegistroDiarioAsync(RegistroDiario registro)
-{
-    int id = -1;
-    await Task.Run(() =>
-    {
-        try
         {
-            using (var conexao = ObterConexao())
-            using (var transacao = conexao.BeginTransaction())
+            int id = -1;
+            await Task.Run(() =>
             {
-                // Inclui o SELECT last_insert_rowid() logo após o INSERT
-                using (var comando = new SQLiteCommand(@"
+                try
+                {
+                    using (var conexao = ObterConexao())
+                    using (var transacao = conexao.BeginTransaction())
+                    {
+                        // Inclui o SELECT last_insert_rowid() logo após o INSERT
+                        using (var comando = new SQLiteCommand(@"
                     INSERT INTO RegistroDiario 
                       (UserId, Data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId)
                     VALUES 
                       (@UserId, @Data, @HumorId, @SonoId, @AlimentacaoId, @AtividadeFisicaId);
                     SELECT last_insert_rowid();", conexao, transacao))
-                {
-                    comando.Parameters.AddWithValue("@UserId", registro.UserId);
-                    comando.Parameters.AddWithValue("@Data", registro.Data);
-                    comando.Parameters.AddWithValue("@HumorId", registro.HumorId);
-                    comando.Parameters.AddWithValue("@SonoId", registro.SonoId);
-                    comando.Parameters.AddWithValue("@AlimentacaoId", registro.AlimentacaoId);
-                    comando.Parameters.AddWithValue("@AtividadeFisicaId", registro.AtividadeFisicaId);
+                        {
+                            comando.Parameters.AddWithValue("@UserId", registro.UserId);
+                            comando.Parameters.AddWithValue("@Data", registro.Data);
+                            comando.Parameters.AddWithValue("@HumorId", registro.HumorId);
+                            comando.Parameters.AddWithValue("@SonoId", registro.SonoId);
+                            comando.Parameters.AddWithValue("@AlimentacaoId", registro.AlimentacaoId);
+                            comando.Parameters.AddWithValue("@AtividadeFisicaId", registro.AtividadeFisicaId);
 
-                    // ExecuteScalar retorna o resultado do SELECT
-                    id = Convert.ToInt32(comando.ExecuteScalar());
+                            // ExecuteScalar retorna o resultado do SELECT
+                            id = Convert.ToInt32(comando.ExecuteScalar());
+                        }
+
+                        transacao.Commit();
+                        Console.WriteLine($"Registro salvo com sucesso! Novo id = {id}");
+                    }
                 }
-
-                transacao.Commit();
-                Console.WriteLine($"Registro salvo com sucesso! Novo id = {id}");
-            }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao adicionar registro diário: " + ex.Message);
+                }
+            });
+            return id;
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Erro ao adicionar registro diário: " + ex.Message);
-        }
-    });
-    return id;
-}
 
 
         public static async Task<RegistroDiario?> ObterRegistroDiarioAsync(int id)
@@ -126,8 +126,56 @@ namespace TopHealth2
             });
             return registro;
         }
+        public static async Task<List<RegistroDiarioExibicao>> ObterRegistrosDiariosExibicaoAsync()
+        {
+            var lista = new List<RegistroDiarioExibicao>();
+            await Task.Run(() =>
+            {
+                using (var conexao = new SQLiteConnection(Database._caminho))
+                {
+                    conexao.Open();
+                    using (var comando = new SQLiteCommand(@"
+                        SELECT
+                            RegistroDiario.id,
+                            Usuario.Nome AS Usuario,
+                            RegistroDiario.Data,
+                            Humor.Descricao AS Humor,
+                            QualidadeSono.Descricao AS Sono,
+                            Alimentacao.Descricao AS Alimentacao,
+                            Alimentacao.ValorEnergetico,
+                            AtividadeFisica.TipoAtividade,
+                            AtividadeFisica.DuracaoMinutos
+                        FROM RegistroDiario
+                        JOIN Usuario ON Usuario.id = RegistroDiario.UserId
+                        JOIN Humor ON Humor.id = RegistroDiario.HumorId
+                        JOIN QualidadeSono ON QualidadeSono.id = RegistroDiario.SonoId
+                        JOIN Alimentacao ON Alimentacao.id = RegistroDiario.AlimentacaoId
+                        JOIN AtividadeFisica ON AtividadeFisica.id = RegistroDiario.AtividadeFisicaId
+                        ORDER BY RegistroDiario.id;", conexao))
+                    using (var leitor = comando.ExecuteReader())
+                    {
+                        while (leitor.Read())
+                        {
+                            lista.Add(new RegistroDiarioExibicao
+                            {
+                                Id = leitor.GetInt32(0),
+                                Usuario = leitor.GetString(1),
+                                Data = leitor.GetString(2),
+                                Humor = leitor.GetString(3),
+                                Sono = leitor.GetString(4),
+                                Alimentacao = leitor.GetString(5),
+                                ValorEnergetico = leitor.GetInt32(6),
+                                TipoAtividade = leitor.GetString(7),
+                                DuracaoMinutos = leitor.GetInt32(8)
+                            });
+                        }
+                    }
+                }
+            });
+            return lista;
+        }
 
-        public static async Task<List<RegistroDiario>> ObterTodosRegistrosDiariosAsync(int userId, string ?dataInicio = null, string ?dataFim = null)
+        public static async Task<List<RegistroDiario>> ObterTodosRegistrosDiariosAsync(int userId, string? dataInicio = null, string? dataFim = null)
         {
             List<RegistroDiario> registros = new List<RegistroDiario>();
             await Task.Run(() =>
@@ -164,7 +212,7 @@ namespace TopHealth2
                                 int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
                                 int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaId"]) : -1;
 
-                                registros.Add(new RegistroDiario( idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica,idRegistroDiario));
+                                registros.Add(new RegistroDiario(idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica, idRegistroDiario));
                             }
                         }
                     }
@@ -235,9 +283,9 @@ namespace TopHealth2
             });
             return sucesso;
         }
-      
 
-        
+
+
         public static async Task<int> AdicionarHumorAsync(Humor humor)
         {
             int id = -1;
@@ -262,9 +310,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<Humor ?> ObterHumorAsync(int id)
+        public static async Task<Humor?> ObterHumorAsync(int id)
         {
-            Humor ? humor = null;  //pode ser null
+            Humor? humor = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -279,7 +327,7 @@ namespace TopHealth2
                             {
                                 int idHumor = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
                                 string descricaoHumor = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
-                                
+
                                 humor = new Humor(idHumor, descricaoHumor);
                             }
                         }
@@ -309,7 +357,7 @@ namespace TopHealth2
 
                             int idHumor = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
                             string descricaoHumor = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
-                            
+
                             humores.Add(new Humor(idHumor, descricaoHumor));
                         }
                     }
@@ -366,9 +414,9 @@ namespace TopHealth2
             });
             return sucesso;
         }
-        
 
-        
+
+
         public static async Task<int> AdicionarQualidadeSonoAsync(QualidadeSono sono)
         {
             int id = -1;
@@ -393,9 +441,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<QualidadeSono ? > ObterQualidadeSonoAsync(int id)
+        public static async Task<QualidadeSono?> ObterQualidadeSonoAsync(int id)
         {
-            QualidadeSono ? sono = null;  //pode ser null
+            QualidadeSono? sono = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -411,7 +459,7 @@ namespace TopHealth2
 
                                 int idQualidadeSono = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
                                 string descricaoQualidadeSono = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
-                                
+
                                 sono = new QualidadeSono(idQualidadeSono, descricaoQualidadeSono);
                             }
                         }
@@ -441,7 +489,7 @@ namespace TopHealth2
 
                             int idQualidadeSono = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
                             string descricaoQualidadeSono = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
-                            
+
                             qualidades.Add(new QualidadeSono(idQualidadeSono, descricaoQualidadeSono));
                         }
                     }
@@ -498,7 +546,7 @@ namespace TopHealth2
             });
             return sucesso;
         }
-       
+
         public static async Task<int> AdicionarAlimentacaoAsync(Alimentacao alimentacao)
         {
             int id = -1;
@@ -524,9 +572,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<Alimentacao ?> ObterAlimentacaoAsync(int id)
+        public static async Task<Alimentacao?> ObterAlimentacaoAsync(int id)
         {
-            Alimentacao ? alimentacao = null;  //pode ser null
+            Alimentacao? alimentacao = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -541,9 +589,9 @@ namespace TopHealth2
                             {
 
                                 int idAlimentacao = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
-                                string descricao = leitor["Descricao"] != DBNull.Value? leitor["Descricao"].ToString()! : string.Empty;
+                                string descricao = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
                                 int valorEnergetico1 = leitor["ValorEnergetico"] != DBNull.Value ? Convert.ToInt32(leitor["ValorEnergetico"]) : 0;
-                                
+
                                 alimentacao = new Alimentacao(idAlimentacao, descricao, valorEnergetico1);
                             }
                         }
@@ -572,9 +620,9 @@ namespace TopHealth2
                         {
 
                             int idAlimentacao = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
-                            string descricao = leitor["Descricao"] != DBNull.Value? leitor["Descricao"].ToString()! : string.Empty;
+                            string descricao = leitor["Descricao"] != DBNull.Value ? leitor["Descricao"].ToString()! : string.Empty;
                             int valorEnergetico1 = leitor["ValorEnergetico"] != DBNull.Value ? Convert.ToInt32(leitor["ValorEnergetico"]) : 0;
-                            
+
                             alimentacoes.Add(new Alimentacao(idAlimentacao, descricao, valorEnergetico1));
                         }
                     }
@@ -662,9 +710,9 @@ namespace TopHealth2
             return id;
         }
 
-        public static async Task<AtividadeFisica ?> ObterAtividadeFisicaAsync(int id)
+        public static async Task<AtividadeFisica?> ObterAtividadeFisicaAsync(int id)
         {
-            AtividadeFisica ? atividade = null; //pode ser null
+            AtividadeFisica? atividade = null; //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -774,10 +822,10 @@ namespace TopHealth2
             return sucesso;
         }
 
-        
-        public static async Task<Configuracao ? > ObterConfiguracaoAsync(int userId)
+
+        public static async Task<Configuracao?> ObterConfiguracaoAsync(int userId)
         {
-            Configuracao ? configuracao = null;  //pode ser null
+            Configuracao? configuracao = null;  //pode ser null
             await Task.Run(() =>
             {
                 try
@@ -818,7 +866,7 @@ namespace TopHealth2
                 {
                     using (var conexao = ObterConexao())
                     {
-    
+
                         using (var comando = new SQLiteCommand("SELECT COUNT(*) FROM Configuracao WHERE UserId = @UserId", conexao))
                         {
                             comando.Parameters.AddWithValue("@UserId", configuracao.UserId);
@@ -869,4 +917,16 @@ namespace TopHealth2
         }
 
     }
+        public class RegistroDiarioExibicao
+{
+    public int Id { get; set; }
+    public string Usuario { get; set; }
+    public string Data { get; set; }
+    public string Humor { get; set; }
+    public string Sono { get; set; }
+    public string Alimentacao { get; set; }
+    public int ValorEnergetico { get; set; }
+    public string TipoAtividade { get; set; }
+    public int DuracaoMinutos { get; set; }
+}
 }

@@ -45,18 +45,19 @@
                     <ColumnDefinition Width="25*"/>
                 </Grid.ColumnDefinitions> 
                 
-                <DataGrid Grid.Row="1" Grid.ColumnSpan="4"
-                        x:Name="RegistroDiarioGrid"
-                        AutoGenerateColumns="False"
-                        IsReadOnly="False"
-                        SelectionMode="Single"
-                        CellEditEnding="RegistroDiarioGrid_CellEditEnding"
-                        x:DataType="local:RegistroDiarioModel">
+                <DataGrid Grid.Row="1" Grid.Column="0"
+                          x:Name="RegistroDiarioGrid"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="False"
+                          Margin="10"
+                          x:DataType="local:RegistroDiarioExibicao">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Humor" Binding="{Binding Humor}" />
                         <DataGridTextColumn Header="Sono" Binding="{Binding Sono}" />
-                        <DataGridTextColumn Header="Hábitos Alimentares" Binding="{Binding HabitosAlimentares}" />
-                        <DataGridTextColumn Header="Atividade Física" Binding="{Binding AtividadeFisica}" />
+                        <DataGridTextColumn Header="Alimentação" Binding="{Binding Alimentacao}" />
+                        <DataGridTextColumn Header="Valor Energético" Binding="{Binding ValorEnergetico}" />
+                        <DataGridTextColumn Header="Atividade Física" Binding="{Binding TipoAtividade}" />
+                        <DataGridTextColumn Header="Duração (min)" Binding="{Binding DuracaoMinutos}" />
                     </DataGrid.Columns>
                 </DataGrid>
                

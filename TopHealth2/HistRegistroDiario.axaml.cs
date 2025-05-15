@@ -8,23 +8,24 @@ namespace TopHealth2;
 
 public partial class HistRegistroDiario : Window
 {
-    public ObservableCollection<RegistroDiarioModel> Registros { get; set; }
 
     public HistRegistroDiario()
     {
         InitializeComponent();
+        CarregarRegistros();
 
         // Inicialize os dados
-        Registros = new ObservableCollection<RegistroDiarioModel>
-        {
-            new RegistroDiarioModel { Humor = "Feliz", Sono = "Muito boa", HabitosAlimentares = "Saudável", AtividadeFisica = 30 },
-            new RegistroDiarioModel { Humor = "Triste", Sono = "Ruim", HabitosAlimentares = "Irregular", AtividadeFisica = 10 }
-        };
+        
 
         // Vincule os dados ao DataGrid usando ItemsSource
-        RegistroDiarioGrid.ItemsSource = Registros;
+
     }
     
+    private async void CarregarRegistros()
+        {
+            var lista = await DatabaseMethods.ObterRegistrosDiariosExibicaoAsync();
+            RegistroDiarioGrid.ItemsSource = new ObservableCollection<RegistroDiarioExibicao>(lista);
+        }
 
     private async void RegistroDiarioGrid_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
     {

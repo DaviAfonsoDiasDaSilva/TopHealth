@@ -248,28 +248,28 @@ public class Configuracao
     private string _tema;
     private int _flagImportacao;
 
-    public int UserId 
-    { 
-        get { return _userId; } 
-        set { _userId = value; } 
+    public int UserId
+    {
+        get { return _userId; }
+        set { _userId = value; }
     }
 
-    public string CaminhoBanco 
-    { 
-        get { return _caminhoBanco; } 
-        set { _caminhoBanco = value; } 
+    public string CaminhoBanco
+    {
+        get { return _caminhoBanco; }
+        set { _caminhoBanco = value; }
     }
 
-    public string Tema 
-    { 
-        get { return _tema; } 
-        set { _tema = value; } 
+    public string Tema
+    {
+        get { return _tema; }
+        set { _tema = value; }
     }
 
-    public int FlagImportacao 
-    { 
-        get { return _flagImportacao; } 
-        set { _flagImportacao = value; } 
+    public int FlagImportacao
+    {
+        get { return _flagImportacao; }
+        set { _flagImportacao = value; }
     }
 
     public Configuracao(int userId, string caminhoBanco, string tema, int flagImportacao)
@@ -291,34 +291,34 @@ public class Configuracao
 
         public int Id
         {
-            get {return _id;}
-            set {_id = value;}
+            get { return _id; }
+            set { _id = value; }
         }
 
         public string Nome
         {
-            get {return _Nome;}
-            set {_Nome = value;}
+            get { return _Nome; }
+            set { _Nome = value; }
         }
 
         public string Sobrenome
         {
-            get {return _Sobrenome;}
-            set {_Sobrenome = value;}
+            get { return _Sobrenome; }
+            set { _Sobrenome = value; }
         }
 
         public string Email
         {
-            get {return _email;}
-            set {_email = value;}
+            get { return _email; }
+            set { _email = value; }
         }
 
         public string Senha
         {
-            get {return _senha;}
-            set {_senha = value;}
+            get { return _senha; }
+            set { _senha = value; }
         }
-        
+
         public Usuario(int id, string Nome, string Sobrenome, string email, string senha)
         {
             _id = id;
@@ -327,8 +327,6 @@ public class Configuracao
             _email = email;
             _senha = senha;
         }
-        
-
-        
     }
+
 }
