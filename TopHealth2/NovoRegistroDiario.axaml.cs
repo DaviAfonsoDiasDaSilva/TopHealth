@@ -39,10 +39,8 @@ public partial class NovoRegistroDiario : Window
         // Faça algo com textBox.Text
     }
     }*/
-    string Alimentacaotexto;
     private void AtvFisQuaSelec(object sender, SelectionChangedEventArgs e)
     {   
-        Alimentacaotexto = Alimentacao.Text;
     }
 
     private void BotRet(object? sender, RoutedEventArgs e)
@@ -53,7 +51,7 @@ public partial class NovoRegistroDiario : Window
     }
 
     private async void BotSalv(object? sender, RoutedEventArgs e)
-    {   
+    {
         /*int UserId = 1;
         string data = DateTime.Now.ToString("yyyy-MM-dd");
         int HumorId = GetIdFromComboBox(Humor);
@@ -64,9 +62,10 @@ public partial class NovoRegistroDiario : Window
         RegistroDiario regiDia= new RegistroDiario(UserId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
         await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);*/
+         string descricaoAlimentacao = Alimentacao.Text;
         int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, descricaoHumor));
         int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, descricaoSono));
-        int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, Alimentacaotexto, 450));
+        int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, descricaoAlimentacao, 450));
         int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, "caminhada", 30));
 
         int idRegistro = await DatabaseMethods.AdicionarRegistroDiarioAsync(
