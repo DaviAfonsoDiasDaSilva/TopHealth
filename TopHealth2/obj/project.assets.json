@@ -605,6 +605,37 @@
           }
         }
       },
+      "ScottPlot/5.0.22": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.7"
+        },
+        "compile": {
+          "lib/net8.0/ScottPlot.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/ScottPlot.dll": {}
+        }
+      },
+      "ScottPlot.Avalonia/5.0.22": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.2",
+          "Avalonia.Skia": "11.0.2",
+          "ScottPlot": "5.0.22"
+        },
+        "compile": {
+          "lib/net8.0/ScottPlot.Avalonia.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/ScottPlot.Avalonia.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
       "SkiaSharp/2.88.9": {
         "type": "package",
         "dependencies": {
@@ -626,6 +657,36 @@
         "type": "package",
         "dependencies": {
           "SkiaSharp": "2.88.9"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm"
+          },
+          "runtimes/linux-arm64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-musl-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/libSkiaSharp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.7": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "2.88.7"
         },
         "compile": {
           "lib/net6.0/_._": {}
@@ -1925,6 +1986,47 @@
         "version.txt"
       ]
     },
+    "ScottPlot/5.0.22": {
+      "sha512": "P8kmxgcRjGlFU+yHjduoLbkjtpDv+SMqKigdPteqDByrhZuSzxYEgd1xdIhAOvpyh1sXm243HFh8oDLFM5q7zA==",
+      "type": "package",
+      "path": "scottplot/5.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/ScottPlot.dll",
+        "lib/net6.0/ScottPlot.dll",
+        "lib/net8.0/ScottPlot.dll",
+        "lib/netstandard2.0/ScottPlot.dll",
+        "readme.md",
+        "scottplot.5.0.22.nupkg.sha512",
+        "scottplot.nuspec"
+      ]
+    },
+    "ScottPlot.Avalonia/5.0.22": {
+      "sha512": "QIW1ccPRV9uqvFZAHtZUq12ioxQeksPlzVz/5g9EIzYXuse7NOqUbZmHvyF2+NWqFfIPfON4vMYuXG8b54OaIg==",
+      "type": "package",
+      "path": "scottplot.avalonia/5.0.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/net462/ScottPlot.Avalonia.dll",
+        "lib/net462/ScottPlot.Avalonia.pdb",
+        "lib/net6.0/ScottPlot.Avalonia.dll",
+        "lib/net6.0/ScottPlot.Avalonia.pdb",
+        "lib/net8.0/ScottPlot.Avalonia.dll",
+        "lib/net8.0/ScottPlot.Avalonia.pdb",
+        "readme.md",
+        "scottplot.avalonia.5.0.22.nupkg.sha512",
+        "scottplot.avalonia.nuspec",
+        "src/ScottPlot.Avalonia/AssemblyInfo.cs",
+        "src/ScottPlot.Avalonia/AvaPlot.cs",
+        "src/ScottPlot.Avalonia/AvaPlotExtensions.cs",
+        "src/ScottPlot.Avalonia/AvaPlotMenu.cs",
+        "src/ScottPlot.Avalonia/ScottPlot.Avalonia.csproj"
+      ]
+    },
     "SkiaSharp/2.88.9": {
       "sha512": "3MD5VHjXXieSHCleRLuaTXmL2pD0mB7CcOB1x2kA1I4bhptf4e3R27iM93264ZYuAq6mkUyX5XbcxnZvMJYc1Q==",
       "type": "package",
@@ -2020,6 +2122,29 @@
         "runtimes/linux-x64/native/libSkiaSharp.so",
         "skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
         "skiasharp.nativeassets.linux.nuspec"
+      ]
+    },
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.7": {
+      "sha512": "KkMftfAz1lGPnuhyecuLJzeyvMjXtHp9cYVQc/oeLhF8KYrxtUxRy5LOX5oROhyLHy/CyqEl9MoAhqmSH7cV7g==",
+      "type": "package",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "buildTransitive/net462/SkiaSharp.NativeAssets.Linux.NoDependencies.targets",
+        "lib/net462/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard1.3/_._",
+        "runtimes/linux-arm/native/libSkiaSharp.so",
+        "runtimes/linux-arm64/native/libSkiaSharp.so",
+        "runtimes/linux-musl-x64/native/libSkiaSharp.so",
+        "runtimes/linux-x64/native/libSkiaSharp.so",
+        "skiasharp.nativeassets.linux.nodependencies.2.88.7.nupkg.sha512",
+        "skiasharp.nativeassets.linux.nodependencies.nuspec"
       ]
     },
     "SkiaSharp.NativeAssets.macOS/2.88.9": {
@@ -2689,23 +2814,31 @@
       "Avalonia.Fonts.Inter >= 11.2.7",
       "Avalonia.Themes.Fluent >= 11.2.7",
       "MessageBox.Avalonia >= 3.2.0",
+      "ScottPlot.Avalonia >= 5.0.22",
       "System.Data.SQLite >= 1.0.119"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\davia\\.nuget\\packages\\": {}
+    "C:\\Users\\samug\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+      "projectUniqueName": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj",
       "projectName": "TopHealth2",
-      "projectPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
-      "packagesPath": "C:\\Users\\davia\\.nuget\\packages\\",
-      "outputPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\obj\\",
+      "projectPath": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+      "packagesPath": "C:\\Users\\samug\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\davia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\NuGet.Config",
+        "C:\\Users\\samug\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -2758,6 +2891,10 @@
             "target": "Package",
             "version": "[3.2.0, )"
           },
+          "ScottPlot.Avalonia": {
+            "target": "Package",
+            "version": "[5.0.22, )"
+          },
           "System.Data.SQLite": {
             "target": "Package",
             "version": "[1.0.119, )"
@@ -2779,7 +2916,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

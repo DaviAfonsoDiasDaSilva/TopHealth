@@ -14,6 +14,7 @@
           "Avalonia.Fonts.Inter": "11.2.7",
           "Avalonia.Themes.Fluent": "11.2.7",
           "MessageBox.Avalonia": "3.2.0",
+          "ScottPlot.Avalonia": "5.0.22",
           "System.Data.SQLite": "1.0.119"
         },
         "runtime": {
@@ -438,6 +439,31 @@
           }
         }
       },
+      "ScottPlot/5.0.22": {
+        "dependencies": {
+          "SkiaSharp": "2.88.9",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.7"
+        },
+        "runtime": {
+          "lib/net8.0/ScottPlot.dll": {
+            "assemblyVersion": "5.0.22.0",
+            "fileVersion": "5.0.22.0"
+          }
+        }
+      },
+      "ScottPlot.Avalonia/5.0.22": {
+        "dependencies": {
+          "Avalonia": "11.2.7",
+          "Avalonia.Skia": "11.2.7",
+          "ScottPlot": "5.0.22"
+        },
+        "runtime": {
+          "lib/net8.0/ScottPlot.Avalonia.dll": {
+            "assemblyVersion": "5.0.22.0",
+            "fileVersion": "5.0.22.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.9": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.9",
@@ -475,6 +501,11 @@
             "assetType": "native",
             "fileVersion": "0.0.0.0"
           }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.7": {
+        "dependencies": {
+          "SkiaSharp": "2.88.9"
         }
       },
       "SkiaSharp.NativeAssets.macOS/2.88.9": {
@@ -944,6 +975,20 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
+    "ScottPlot/5.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-P8kmxgcRjGlFU+yHjduoLbkjtpDv+SMqKigdPteqDByrhZuSzxYEgd1xdIhAOvpyh1sXm243HFh8oDLFM5q7zA==",
+      "path": "scottplot/5.0.22",
+      "hashPath": "scottplot.5.0.22.nupkg.sha512"
+    },
+    "ScottPlot.Avalonia/5.0.22": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QIW1ccPRV9uqvFZAHtZUq12ioxQeksPlzVz/5g9EIzYXuse7NOqUbZmHvyF2+NWqFfIPfON4vMYuXG8b54OaIg==",
+      "path": "scottplot.avalonia/5.0.22",
+      "hashPath": "scottplot.avalonia.5.0.22.nupkg.sha512"
+    },
     "SkiaSharp/2.88.9": {
       "type": "package",
       "serviceable": true,
@@ -957,6 +1002,13 @@
       "sha512": "sha512-cWSaJKVPWAaT/WIn9c8T5uT/l4ETwHxNJTkEOtNKjphNo8AW6TF9O32aRkxqw3l8GUdUo66Bu7EiqtFh/XG0Zg==",
       "path": "skiasharp.nativeassets.linux/2.88.9",
       "hashPath": "skiasharp.nativeassets.linux.2.88.9.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KkMftfAz1lGPnuhyecuLJzeyvMjXtHp9cYVQc/oeLhF8KYrxtUxRy5LOX5oROhyLHy/CyqEl9MoAhqmSH7cV7g==",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.7",
+      "hashPath": "skiasharp.nativeassets.linux.nodependencies.2.88.7.nupkg.sha512"
     },
     "SkiaSharp.NativeAssets.macOS/2.88.9": {
       "type": "package",

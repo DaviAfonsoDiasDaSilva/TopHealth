@@ -48,6 +48,62 @@ namespace TopHealth2
             return id;
         }
 
+        public static List<string> TakeSonos(){
+            var descricoes = new List<string>();
+            using (var conexao = new SQLiteConnection(Database._caminho))
+            {
+                conexao.Open();
+
+                string sql = "SELECT Descricao FROM QualidadeSono;";
+
+                using (var cmd = new SQLiteCommand(sql, conexao))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        descricoes.Add(reader["Descricao"].ToString());
+                    }
+                }
+            }
+            return descricoes;
+        }
+
+        public static List<string> TakeAll(){
+            var all = new List<string>();
+            using (var conexao = new SQLiteConnection(Database._caminho))
+            {
+                conexao.Open();
+
+                string sql = @"
+                    SELECT 
+                        hu.Descricao AS Humor,
+                        ali.Descricao AS Alimentacao,
+                        ativ.TipoAtividade AS Atividade,
+                        ativ.DuracaoMinutos AS Duracao,
+                        qual.Descricao AS Sono
+                    FROM RegistroDiario reg
+                    INNER JOIN Humor hu ON reg.HumorId = hu.Id
+                    INNER JOIN Alimentacao ali ON reg.AlimentacaoId = ali.Id
+                    INNER JOIN AtividadeFisica ativ ON reg.AtividadeFisicaId = ativ.Id
+                    INNER JOIN QualidadeSono qual ON reg.SonoId = qual.Id;
+                    ";
+
+                using (var cmd = new SQLiteCommand(sql, conexao))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        all.Add(reader["Humor"].ToString());
+                        all.Add(reader["Alimentacao"].ToString());
+                        all.Add(reader["Atividade"].ToString());
+                        all.Add(reader["Duracao"].ToString());
+                        all.Add(reader["Sono"].ToString());
+                    }
+                }
+            }
+            return all;
+        }
+
 
         public static async Task<int> AdicionarRegistroDiarioAsync(RegistroDiario registro)
         {

@@ -15,24 +15,24 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TopHealth2
-build_property.ProjectDir = D:\Estudos\Programacao\TAPOO\TopHealth\TopHealth2\
+build_property.ProjectDir = C:\Users\samug\OneDrive\Documentos\Scripts\ScriptsCs\TopHealth\TopHealth2\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/App.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/CriaUser.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/CriaUser.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/HistRegistroDiario.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/HistRegistroDiario.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/Login.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/Login.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/MainWindow.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[D:/Estudos/Programacao/TAPOO/TopHealth/TopHealth2/NovoRegistroDiario.axaml]
+[C:/Users/samug/OneDrive/Documentos/Scripts/ScriptsCs/TopHealth/TopHealth2/NovoRegistroDiario.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

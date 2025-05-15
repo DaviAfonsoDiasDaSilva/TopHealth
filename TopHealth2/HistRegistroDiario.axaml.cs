@@ -3,6 +3,17 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia;
 using System.Collections.ObjectModel;
+// by sgl
+using Avalonia.Controls;
+using System.Collections.Generic;
+using Avalonia.Interactivity;
+using ScottPlot;
+using ScottPlot.Avalonia;
+
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
+using System.IO;
+//
 
 namespace TopHealth2;
 
@@ -12,6 +23,7 @@ public partial class HistRegistroDiario : Window
     public HistRegistroDiario()
     {
         InitializeComponent();
+
         CarregarRegistros();
 
         // Inicialize os dados
@@ -23,8 +35,10 @@ public partial class HistRegistroDiario : Window
     
     private async void CarregarRegistros()
         {
-            var lista = await DatabaseMethods.ObterRegistrosDiariosExibicaoAsync();
-            RegistroDiarioGrid.ItemsSource = new ObservableCollection<RegistroDiarioExibicao>(lista);
+            // var lista = await DatabaseMethods.ObterRegistrosDiariosExibicaoAsync();
+            // RegistroDiarioGrid.ItemsSource = new ObservableCollection<RegistroDiarioExibicao>(lista);
+        
+            WriteAll();
         }
 
     private async void RegistroDiarioGrid_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
@@ -91,6 +105,80 @@ public partial class HistRegistroDiario : Window
             "Irregular" => 2,
             _ => -1
         };
+    }
+
+    private void PlotGrafico(object sender, RoutedEventArgs e){
+        var qualidadesSono = new List<string> {"Muito boa","Boa","Mediano","Ruim","Muito Ruim"};
+
+        var myPlot = new ScottPlot.Plot();
+
+        var l_xs = new List<double>{};
+        var l_labels = new List<string>();
+        var quantities = new List<double>();
+        var descricoes = OrdenarSonos(DatabaseMethods.TakeSonos());
+        foreach (var ql_sono in descricoes){
+            Console.WriteLine(ql_sono);
+        }
+        int n = 1;
+        // Pega a quantidade de cada qualidade do sono
+        foreach (var ql_sono1 in qualidadesSono){
+            int qt = 0;
+            foreach (var ql_sono2 in descricoes){
+                if (ql_sono1==ql_sono2){
+                    qt++;
+                }
+            }
+            quantities.Add(qt);
+        }
+
+        // Coloca em cada 'x'
+        foreach (var ql_sono in qualidadesSono){
+            l_xs.Add(n);
+            n++;
+            l_labels.Add(ql_sono);
+        }
+
+        // Transforma em array
+        double[] xs = l_xs.ToArray();
+        double[] ys = quantities.ToArray();
+        string[] labels = l_labels.ToArray();
+
+        // Salva imagem
+        myPlot.Add.Scatter(xs, ys);
+        myPlot.Axes.Bottom.TickGenerator = new ScottPlot.TickGenerators.NumericManual(xs, labels);
+        myPlot.SavePng("grafico.png",600,600);
+        
+        // Puxar imagem
+        var bitmap = new Bitmap("./grafico.png");
+        grafico.Source = bitmap;
+    }
+    
+    public List<string> OrdenarSonos(List<string> sonosDesordenados){
+        var qualidadesSono = new List<string> {"Muito boa","Boa","Mediano","Ruim","Muito Ruim"};
+        var sonosOrdenados = new List<string>();
+        foreach(var sono1 in qualidadesSono){
+            foreach(var sono2 in sonosDesordenados){
+                if (sono1 == sono2){
+                    sonosOrdenados.Add(sono2);
+                }
+            }
+        }
+        return sonosOrdenados;
+    }
+
+    private void WriteAll(){ // escrever o regsitro diario num text block
+        string str_historico = "";
+        int i = 1;
+
+        foreach (var str in DatabaseMethods.TakeAll()){
+            str_historico += "_"+str+"_ ";
+            i++;
+            if (i%5==0){
+                str_historico+="\n";
+            }
+        }
+
+        this.FindControl<TextBlock>("historico").Text = str_historico;
     }
 }
 

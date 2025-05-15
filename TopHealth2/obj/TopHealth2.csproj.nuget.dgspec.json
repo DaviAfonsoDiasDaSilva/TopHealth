@@ -1,20 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {}
+    "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj": {}
   },
   "projects": {
-    "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj": {
+    "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+        "projectUniqueName": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj",
         "projectName": "TopHealth2",
-        "projectPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\TopHealth2.csproj",
-        "packagesPath": "C:\\Users\\davia\\.nuget\\packages\\",
-        "outputPath": "D:\\Estudos\\Programacao\\TAPOO\\TopHealth\\TopHealth2\\obj\\",
+        "projectPath": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\TopHealth2.csproj",
+        "packagesPath": "C:\\Users\\samug\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\samug\\OneDrive\\Documentos\\Scripts\\ScriptsCs\\TopHealth\\TopHealth2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\davia\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\NuGet.Config",
+          "C:\\Users\\samug\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -67,6 +73,10 @@
               "target": "Package",
               "version": "[3.2.0, )"
             },
+            "ScottPlot.Avalonia": {
+              "target": "Package",
+              "version": "[5.0.22, )"
+            },
             "System.Data.SQLite": {
               "target": "Package",
               "version": "[1.0.119, )"
@@ -88,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

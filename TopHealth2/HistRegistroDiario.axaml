@@ -7,6 +7,7 @@
         x:Class="TopHealth2.HistRegistroDiario"
         Title="Histórico de Registros" Width="1000" Height="800">
 
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
     <Grid>
         <!-- Imagem de fundo -->
         <Image Source="../Assets/Imagens/TopHealthBackground.png"
@@ -14,41 +15,88 @@
                ZIndex="0"/>
         <!-- Conteúdo principal -->
         <StackPanel ZIndex="1">
-            <TextBlock Text="Esse é o seu histórico de registros"
-                       FontSize="40"
-                       FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
-                       Foreground="White"
-                       FontWeight="Bold"
-                       TextAlignment="Center"
-                       Margin="0,30,0,30"/>
-            <DataGrid x:Name="RegistroDiarioGrid"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="True"
-                      Margin="20"
-                      Height="600"
-                      x:DataType="local:RegistroDiarioExibicao">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Usuário" Binding="{Binding Usuario}" />
-                    <DataGridTextColumn Header="Data" Binding="{Binding Data}" />
-                    <DataGridTextColumn Header="Humor" Binding="{Binding Humor}" />
-                    <DataGridTextColumn Header="Sono" Binding="{Binding Sono}" />
-                    <DataGridTextColumn Header="Alimentação" Binding="{Binding Alimentacao}" />
-                    <DataGridTextColumn Header="Valor Energético" Binding="{Binding ValorEnergetico}" />
-                    <DataGridTextColumn Header="Atividade Física" Binding="{Binding TipoAtividade}" />
-                    <DataGridTextColumn Header="Duração (min)" Binding="{Binding DuracaoMinutos}" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button Background="RoyalBlue"
-                    Foreground="White"
-                    FontSize="16"
-                    Padding="20"
-                    BorderThickness="2"
-                    BorderBrush="White"
-                    CornerRadius="20"
+                <TextBlock Text="Gráfico de Sonos"
+                        FontSize="40"
+                        FontFamily="avares://TopHealth2/Assets/Fontes/Italianno-Regular.ttf#Italianno"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        TextAlignment="Center"
+                        Margin="0,30,0,30"/>
+
+                <TextBlock x:Name="historico"
+                    Text="Opa"
+                    FontSize="24"
                     HorizontalAlignment="Center"
-                    Content="Retornar"
-                    Click="BotRetHist"
-                    Margin="0,20,0,0"/>
+                    Margin="0 0 0 10"/>
+
+                <Grid>
+                    <Image x:Name="grafico" Width="600" Height="600"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Button Content="Plotar Gráfico"
+                        HorizontalAlignment="Center"
+                        Click="PlotGrafico"
+                        
+                        Grid.Column="1"
+                        Background="RoyalBlue"
+                        Foreground="White"
+                        FontSize="13"
+                        Padding="60"
+                        BorderThickness="2"
+                        BorderBrush="White"
+                        CornerRadius="20"/>
+                    
+                    <Button  Grid.Column="1"
+                        Background="RoyalBlue"
+                        Foreground="White"
+                        FontSize="13"
+                        Padding="60"
+                        BorderThickness="2"
+                        BorderBrush="White"
+                        CornerRadius="20"
+                        HorizontalAlignment="Center"
+                        Click="BotRetHist"
+                        Content="Voltar"
+                    />
+                </StackPanel>  
+
+                
+                    
+                <DataGrid x:Name="RegistroDiarioGrid"
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                        Margin="20"
+                        Height="600"
+                        x:DataType="local:RegistroDiarioExibicao">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Usuário" Binding="{Binding Usuario}" />
+                        <DataGridTextColumn Header="Data" Binding="{Binding Data}" />
+                        <DataGridTextColumn Header="Humor" Binding="{Binding Humor}" />
+                        <DataGridTextColumn Header="Sono" Binding="{Binding Sono}" />
+                        <DataGridTextColumn Header="Alimentação" Binding="{Binding Alimentacao}" />
+                        <DataGridTextColumn Header="Valor Energético" Binding="{Binding ValorEnergetico}" />
+                        <DataGridTextColumn Header="Atividade Física" Binding="{Binding TipoAtividade}" />
+                        <DataGridTextColumn Header="Duração (min)" Binding="{Binding DuracaoMinutos}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Background="RoyalBlue"
+                        Foreground="White"
+                        FontSize="16"
+                        Padding="20"
+                        BorderThickness="2"
+                        BorderBrush="White"
+                        CornerRadius="20"
+                        HorizontalAlignment="Center"
+                        Content="Retornar"
+                        Click="BotRetHist"
+                        Margin="0,20,0,0"/>
+
+            
+
+            
+
         </StackPanel>
     </Grid>
+            </ScrollViewer>
 </Window>
