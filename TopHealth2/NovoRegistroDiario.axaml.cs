@@ -53,7 +53,7 @@ public partial class NovoRegistroDiario : Window
 
     private async void BotSalv(object? sender, RoutedEventArgs e)
     {   
-        int UserId = 1;
+        /*int UserId = 1;
         string data = DateTime.Now.ToString("yyyy-MM-dd");
         int HumorId = GetIdFromComboBox(Humor);
         int SonoId = GetIdFromComboBox(Sono);
@@ -62,8 +62,39 @@ public partial class NovoRegistroDiario : Window
         
         RegistroDiario regiDia= new RegistroDiario(UserId,data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId);
 
-        await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);
-    }
+        await DatabaseMethods.AdicionarRegistroDiarioAsync(regiDia);*/
+        int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, "feliz"));
+        int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, "boa"));
+        int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, "arroz e feijão", 450));
+        int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, "caminhada", 30));
+
+        int idRegistro = await DatabaseMethods.AdicionarRegistroDiarioAsync(
+            new RegistroDiario(1, "2025-05-14", idHumor, idSono, idAlimentacao, idAtividade)
+        );
+
+         // 1. Coletar os valores digitados
+    /*string descricaoHumor = DescricaoHumorTextBox.Text;
+    string descricaoSono = DescricaoSonoTextBox.Text;
+    string descricaoAlimentacao = DescricaoAlimentacaoTextBox.Text;
+    int valorEnergetico = (int)ValorEnergeticoUpDown.Value;
+    string tipoAtividade = TipoAtividadeTextBox.Text;
+    int duracaoMinutos = (int)DuracaoMinutosUpDown.Value;
+    string dataRegistro = DataRegistroPicker.SelectedDate?.ToString("yyyy-MM-dd") ?? DateTime.Now.ToString("yyyy-MM-dd");
+
+    // 2. Inserir os dados no banco
+    int idHumor = await DatabaseMethods.AdicionarHumorAsync(new Humor(-1, descricaoHumor));
+    int idSono = await DatabaseMethods.AdicionarQualidadeSonoAsync(new QualidadeSono(-1, descricaoSono));
+    int idAlimentacao = await DatabaseMethods.AdicionarAlimentacaoAsync(new Alimentacao(-1, descricaoAlimentacao, valorEnergetico));
+    int idAtividade = await DatabaseMethods.AdicionarAtividadeFisicaAsync(new AtividadeFisica(-1, tipoAtividade, duracaoMinutos));
+
+    // 3. Inserir registro diário (assumindo UserId fixo 1 aqui)
+    int idRegistro = await DatabaseMethods.AdicionarRegistroDiarioAsync(
+        new RegistroDiario(1, dataRegistro, idHumor, idSono, idAlimentacao, idAtividade)
+    );
+
+    // Mensagem de sucesso
+    await MessageBox.Show(this, "Registro diário salvo com sucesso!", "Sucesso");
+    }*/
 
     private int GetIdFromComboBox(ComboBox comboBox)
     {

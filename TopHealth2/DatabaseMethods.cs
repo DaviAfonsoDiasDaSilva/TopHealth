@@ -7,6 +7,8 @@ namespace TopHealth2
 {
     public static class DatabaseMethods
     {
+        public static string _caminho = @"Data Source=./bancoTAPOO.db";
+
         // Método para obter uma conexão com o banco
         private static SQLiteConnection ObterConexao()
         {
@@ -14,45 +16,84 @@ namespace TopHealth2
             conexao.Open();
             return conexao;
         }
-
         
+        public static async Task<int> AdicionarUsuarioAsync(Configuracao.Usuario usuario)
+{
+    int id = -1;
+    await Task.Run(() =>
+    {
+        try
+        {
+            using (var conexao = new SQLiteConnection(Database._caminho))
+            {
+                conexao.Open();
+                using (var comando = new SQLiteCommand(@"
+                    INSERT INTO Usuario (Nome, Sobrenome, email, senha) 
+                    VALUES (@Nome, @Sobrenome, @email, @senha);
+                    SELECT last_insert_rowid();", conexao))
+                {
+                    comando.Parameters.AddWithValue("@Nome", usuario.Nome);
+                    comando.Parameters.AddWithValue("@Sobrenome", usuario.Sobrenome);
+                    comando.Parameters.AddWithValue("@email", usuario.Email);
+                    comando.Parameters.AddWithValue("@senha", usuario.Senha);
+                    id = Convert.ToInt32(comando.ExecuteScalar());
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Erro ao adicionar usuário: " + ex.Message);
+        }
+    });
+    return id;
+}
+
 
         public static async Task<int> AdicionarRegistroDiarioAsync(RegistroDiario registro)
+{
+    int id = -1;
+    await Task.Run(() =>
+    {
+        try
         {
-            int id = -1;
-            await Task.Run(() =>
+            using (var conexao = ObterConexao())
+            using (var transacao = conexao.BeginTransaction())
             {
-                try
+                // Inclui o SELECT last_insert_rowid() logo após o INSERT
+                using (var comando = new SQLiteCommand(@"
+                    INSERT INTO RegistroDiario 
+                      (UserId, Data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId)
+                    VALUES 
+                      (@UserId, @Data, @HumorId, @SonoId, @AlimentacaoId, @AtividadeFisicaId);
+                    SELECT last_insert_rowid();", conexao, transacao))
                 {
-                    using (var conexao = ObterConexao())
-                    using (var comando = new SQLiteCommand(@"
-                        INSERT INTO RegistroDiario (UserId, Data, HumorId, SonoId, AlimentacaoId, AtividadeFisicaId) 
-                        VALUES (@UserId, @Data, @HumorId, @SonoId, @AlimentacaoId, @AtividadeFisicaId);
-                        SELECT last_insert_rowid();", conexao))
-                    {
-                        comando.Parameters.AddWithValue("@UserId", registro.UserId);
-                        comando.Parameters.AddWithValue("@Data", registro.Data);
-                        comando.Parameters.AddWithValue("@HumorId", registro.HumorId);
-                        comando.Parameters.AddWithValue("@SonoId", registro.SonoId);
-                        comando.Parameters.AddWithValue("@AlimentacaoId", registro.AlimentacaoId);
-                        comando.Parameters.AddWithValue("@AtividadeFisicaId", registro.AtividadeFisicaId);
+                    comando.Parameters.AddWithValue("@UserId", registro.UserId);
+                    comando.Parameters.AddWithValue("@Data", registro.Data);
+                    comando.Parameters.AddWithValue("@HumorId", registro.HumorId);
+                    comando.Parameters.AddWithValue("@SonoId", registro.SonoId);
+                    comando.Parameters.AddWithValue("@AlimentacaoId", registro.AlimentacaoId);
+                    comando.Parameters.AddWithValue("@AtividadeFisicaId", registro.AtividadeFisicaId);
 
-                        id = Convert.ToInt32(comando.ExecuteScalar());
-                    }
+                    // ExecuteScalar retorna o resultado do SELECT
+                    id = Convert.ToInt32(comando.ExecuteScalar());
+                }
 
-                    Console.WriteLine("Registro criado com sucesso!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Erro ao adicionar registro diário: " + ex.Message);
-                }
-            });
-            return id;
+                transacao.Commit();
+                Console.WriteLine($"Registro salvo com sucesso! Novo id = {id}");
+            }
         }
-
-        public static async Task<RegistroDiario ?> ObterRegistroDiarioAsync(int id)
+        catch (Exception ex)
         {
-            RegistroDiario ? registro = null;  //pode ser null
+            Console.WriteLine("Erro ao adicionar registro diário: " + ex.Message);
+        }
+    });
+    return id;
+}
+
+
+        public static async Task<RegistroDiario?> ObterRegistroDiarioAsync(int id)
+        {
+            RegistroDiario? registro = null;
             await Task.Run(() =>
             {
                 try
@@ -65,16 +106,15 @@ namespace TopHealth2
                         {
                             if (leitor.Read())
                             {
-
                                 int idRegistroDiario = leitor["id"] != DBNull.Value ? Convert.ToInt32(leitor["id"]) : -1;
                                 int idUsuario = leitor["UserId"] != DBNull.Value ? Convert.ToInt32(leitor["UserId"]) : -1;
                                 string data = leitor["Data"] != DBNull.Value ? leitor["Data"].ToString()! : string.Empty;
                                 int idHumor = leitor["HumorId"] != DBNull.Value ? Convert.ToInt32(leitor["HumorId"]) : -1;
                                 int idSono = leitor["SonoId"] != DBNull.Value ? Convert.ToInt32(leitor["SonoId"]) : -1;
                                 int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
-                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
-                                
-                                registro = new RegistroDiario( idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica,idRegistroDiario);
+                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaId"]) : -1;
+
+                                registro = new RegistroDiario(idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica, idRegistroDiario);
                             }
                         }
                     }
@@ -122,7 +162,7 @@ namespace TopHealth2
                                 int idHumor = leitor["HumorId"] != DBNull.Value ? Convert.ToInt32(leitor["HumorId"]) : -1;
                                 int idSono = leitor["SonoId"] != DBNull.Value ? Convert.ToInt32(leitor["SonoId"]) : -1;
                                 int idAlimentacao = leitor["AlimentacaoId"] != DBNull.Value ? Convert.ToInt32(leitor["AlimentacaoId"]) : -1;
-                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaid"]) : -1;
+                                int idAtividadeFisica = leitor["AtividadeFisicaId"] != DBNull.Value ? Convert.ToInt32(leitor["AtividadeFisicaId"]) : -1;
 
                                 registros.Add(new RegistroDiario( idUsuario, data, idHumor, idSono, idAlimentacao, idAtividadeFisica,idRegistroDiario));
                             }
@@ -161,6 +201,7 @@ namespace TopHealth2
                         comando.Parameters.AddWithValue("@SonoId", registro.SonoId);
                         comando.Parameters.AddWithValue("@AlimentacaoId", registro.AlimentacaoId);
                         comando.Parameters.AddWithValue("@AtividadeFisicaId", registro.AtividadeFisicaId);
+                        comando.Parameters.AddWithValue("@id", registro.Id);
 
                         sucesso = comando.ExecuteNonQuery() > 0;
                     }

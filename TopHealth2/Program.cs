@@ -327,6 +327,7 @@ public class Configuracao
             _email = email;
             _senha = senha;
         }
+        
 
         
     }

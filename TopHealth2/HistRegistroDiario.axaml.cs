@@ -24,6 +24,7 @@ public partial class HistRegistroDiario : Window
         // Vincule os dados ao DataGrid usando ItemsSource
         RegistroDiarioGrid.ItemsSource = Registros;
     }
+    
 
     private async void RegistroDiarioGrid_CellEditEnding(object? sender, DataGridCellEditEndingEventArgs e)
     {
@@ -47,7 +48,7 @@ public partial class HistRegistroDiario : Window
     }
     private void BotSalvEdit(object? sender, RoutedEventArgs e)
     {
-
+        
     }
     private RegistroDiario ConverterParaRegistroDiario(RegistroDiarioModel model)
     {
